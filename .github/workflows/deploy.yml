@@ -24,7 +24,6 @@ jobs:
 
       - name: Hugo 빌드
         run: hugo --minify
-        working-directory: ./blog
 
       - name: 📦 Pages용 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
