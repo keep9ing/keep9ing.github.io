@@ -28,7 +28,7 @@ jobs:
       - name: 📦 Pages용 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./blog/public
+          path: ./public
 
       - name: 🚀 GitHub Pages에 배포
         uses: actions/deploy-pages@v4
