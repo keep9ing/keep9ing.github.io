@@ -1,0 +1,10 @@
+baseURL = "http://localhost:1313/"
+languageCode = "ko-kr"
+title = "devlog"
+theme = "hugo-book"
+
+# 콘텐츠에 초안 포함 여부
+buildDrafts = false
+
+# 로컬 개발 서버 포트
+port = 1313
