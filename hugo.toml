@@ -1,4 +1,4 @@
 baseURL = "https://keep9ing.github.io/"
 languageCode = "ko-kr"
-title = 'My New Hugo Site'
+title = 'dev log'
 theme = "hugo-book"
