@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko-kr" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="IA(Information Architecture: 정보 구조도) 작성
+현재 작성한 IA는 데스크톱 기준의 메뉴 흐름을 기반
+
+[!todo]  모바일 페이지 따로 작성할 것 👀
+
+[!question] 오라클 말고 인포믹스??
+인포믹스(Informix)는 오라클과는 다른 계열의 **관계형 데이터베이스 관리 시스템(RDBMS)**이에요. IBM이 소유하고 있고, 현재는 HCL Technologies와 공동 개발 및 지원을 진행 중이에요2.
+
+  🔍 오라클과 인포믹스의 주요 차이점
+  #
+
+
+  
+      
+          항목
+          오라클 (Oracle)
+          인포믹스 (Informix)
+      
+  
+  
+      
+          개발사
+          Oracle Corporation
+          IBM / HCL Technologies
+      
+      
+          주요 특징
+          강력한 엔터프라이즈 기능, 복잡한 설정
+          경량, 자동화, 임베디드 환경에 최적화
+      
+      
+          사용 환경
+          대규모 기업, 금융, 공공기관
+          제조, 유통, IoT, 엣지 컴퓨팅 등
+      
+      
+          관리 편의성
+          DBA가 필요, 복잡한 튜닝
+          무관리 환경에서도 안정적 운영 가능
+      
+      
+          데이터 모델링
+          관계형 중심
+          관계형 &#43; 객체지향 &#43; NoSQL &#43; 시계열 지원
+      
+      
+          라이선스 비용
+          상대적으로 고가
+          다양한 무료/저비용 버전 제공
+      
+  
+
+
+  💡 인포믹스의 강점
+  #
+
+
+임베디드 환경에 최적화: 소형 디바이스나 게이트웨이에 탑재 가능 (100MB 이하로도 설치 가능)
+시계열 데이터 지원: IoT 센서 데이터 처리에 강력
+자기 관리 기능: DBA 없이도 운영 가능할 정도로 자동화
+SQL &#43; NoSQL &#43; JSON 통합 지원: 다양한 데이터 형식을 하나의 엔진에서 처리 가능
+
+
+[!question] 시계열 데이터 지원한다는게 무슨 말이야? 자기관리기능도 무슨 말인지 알기 쉽게 설명해줘.. DBA없이도 운영가능하다고 했는데 DBA는 뭐지?">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/2025-07-17/">
+  <meta property="og:site_name" content="dev log">
+  <meta property="og:title" content="dev log">
+  <meta property="og:description" content="IA(Information Architecture: 정보 구조도) 작성
+현재 작성한 IA는 데스크톱 기준의 메뉴 흐름을 기반
+[!todo] 모바일 페이지 따로 작성할 것 👀
+[!question] 오라클 말고 인포믹스??
+인포믹스(Informix)는 오라클과는 다른 계열의 **관계형 데이터베이스 관리 시스템(RDBMS)**이에요. IBM이 소유하고 있고, 현재는 HCL Technologies와 공동 개발 및 지원을 진행 중이에요2.
+🔍 오라클과 인포믹스의 주요 차이점#항목 오라클 (Oracle) 인포믹스 (Informix) 개발사 Oracle Corporation IBM / HCL Technologies 주요 특징 강력한 엔터프라이즈 기능, 복잡한 설정 경량, 자동화, 임베디드 환경에 최적화 사용 환경 대규모 기업, 금융, 공공기관 제조, 유통, IoT, 엣지 컴퓨팅 등 관리 편의성 DBA가 필요, 복잡한 튜닝 무관리 환경에서도 안정적 운영 가능 데이터 모델링 관계형 중심 관계형 &#43; 객체지향 &#43; NoSQL &#43; 시계열 지원 라이선스 비용 상대적으로 고가 다양한 무료/저비용 버전 제공 💡 인포믹스의 강점#임베디드 환경에 최적화: 소형 디바이스나 게이트웨이에 탑재 가능 (100MB 이하로도 설치 가능) 시계열 데이터 지원: IoT 센서 데이터 처리에 강력 자기 관리 기능: DBA 없이도 운영 가능할 정도로 자동화 SQL &#43; NoSQL &#43; JSON 통합 지원: 다양한 데이터 형식을 하나의 엔진에서 처리 가능 [!question] 시계열 데이터 지원한다는게 무슨 말이야? 자기관리기능도 무슨 말인지 알기 쉽게 설명해줘.. DBA없이도 운영가능하다고 했는데 DBA는 뭐지?">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+<title>2025 07 17 | dev log</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="http://localhost:1313/2025-07-17/">
+<link rel="stylesheet" href="/book.min.d5e59cb0aa8d22a5813c62cd5e25d3d172489a369c61dc3f622ee96ae1ebb457.css" integrity="sha256-1eWcsKqNIqWBPGLNXiXT0XJImjacYdw/Yi7pauHrtFc=" crossorigin="anonymous">
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.f968432f63deaaab81457906e39e9dc925bbea3a19365adcb09cfd15dad52c89.js" integrity="sha256-&#43;WhDL2PeqquBRXkG456dySW76joZNlrcsJz9FdrVLIk=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>dev log</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>2025 07 17</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-오라클과-인포믹스의-주요-차이점">🔍 오라클과 인포믹스의 주요 차이점</a></li>
+        <li><a href="#-인포믹스의-강점">💡 인포믹스의 강점</a></li>
+        <li><a href="#-시계열-데이터-지원이란">⏱️ <strong>시계열 데이터 지원</strong>이란?</a></li>
+        <li><a href="#-자기-관리-기능self-managing이란">🧠 **자기 관리 기능(Self-Managing)**이란?</a></li>
+        <li><a href="#-dba란">👨‍💼 DBA란?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><p>IA(Information Architecture: 정보 구조도) 작성</p>
+<p>현재 작성한 IA는 데스크톱 기준의 메뉴 흐름을 기반</p>
+<blockquote>
+<p>[!todo]  모바일 페이지 따로 작성할 것 👀</p></blockquote>
+<blockquote>
+<p>[!question] 오라클 말고 인포믹스??</p></blockquote>
+<p>인포믹스(Informix)는 오라클과는 다른 계열의 **관계형 데이터베이스 관리 시스템(RDBMS)**이에요. IBM이 소유하고 있고, 현재는 HCL Technologies와 공동 개발 및 지원을 진행 중이에요2.</p>
+<h3 id="-오라클과-인포믹스의-주요-차이점">
+  🔍 오라클과 인포믹스의 주요 차이점
+  <a class="anchor" href="#-%ec%98%a4%eb%9d%bc%ed%81%b4%ea%b3%bc-%ec%9d%b8%ed%8f%ac%eb%af%b9%ec%8a%a4%ec%9d%98-%ec%a3%bc%ec%9a%94-%ec%b0%a8%ec%9d%b4%ec%a0%90">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>항목</th>
+          <th>오라클 (Oracle)</th>
+          <th>인포믹스 (Informix)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>개발사</td>
+          <td>Oracle Corporation</td>
+          <td>IBM / HCL Technologies</td>
+      </tr>
+      <tr>
+          <td>주요 특징</td>
+          <td>강력한 엔터프라이즈 기능, 복잡한 설정</td>
+          <td>경량, 자동화, 임베디드 환경에 최적화</td>
+      </tr>
+      <tr>
+          <td>사용 환경</td>
+          <td>대규모 기업, 금융, 공공기관</td>
+          <td>제조, 유통, IoT, 엣지 컴퓨팅 등</td>
+      </tr>
+      <tr>
+          <td>관리 편의성</td>
+          <td>DBA가 필요, 복잡한 튜닝</td>
+          <td>무관리 환경에서도 안정적 운영 가능</td>
+      </tr>
+      <tr>
+          <td>데이터 모델링</td>
+          <td>관계형 중심</td>
+          <td>관계형 + 객체지향 + NoSQL + 시계열 지원</td>
+      </tr>
+      <tr>
+          <td>라이선스 비용</td>
+          <td>상대적으로 고가</td>
+          <td>다양한 무료/저비용 버전 제공</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-인포믹스의-강점">
+  💡 인포믹스의 강점
+  <a class="anchor" href="#-%ec%9d%b8%ed%8f%ac%eb%af%b9%ec%8a%a4%ec%9d%98-%ea%b0%95%ec%a0%90">#</a>
+</h3>
+<ul>
+<li><strong>임베디드 환경에 최적화</strong>: 소형 디바이스나 게이트웨이에 탑재 가능 (100MB 이하로도 설치 가능)</li>
+<li><strong>시계열 데이터 지원</strong>: IoT 센서 데이터 처리에 강력</li>
+<li><strong>자기 관리 기능</strong>: DBA 없이도 운영 가능할 정도로 자동화</li>
+<li><strong>SQL + NoSQL + JSON 통합 지원</strong>: 다양한 데이터 형식을 하나의 엔진에서 처리 가능</li>
+</ul>
+<blockquote>
+<p>[!question] 시계열 데이터 지원한다는게 무슨 말이야? 자기관리기능도 무슨 말인지 알기 쉽게 설명해줘.. DBA없이도 운영가능하다고 했는데 DBA는 뭐지?</p></blockquote>
+<p>용어가 어렵게 느껴질 수 있지만, 하나씩 쉽게 풀어볼게요 😊</p>
+<h3 id="-시계열-데이터-지원이란">
+  ⏱️ <strong>시계열 데이터 지원</strong>이란?
+  <a class="anchor" href="#-%ec%8b%9c%ea%b3%84%ec%97%b4-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ec%a7%80%ec%9b%90%ec%9d%b4%eb%9e%80">#</a>
+</h3>
+<ul>
+<li>
+<p>**&ldquo;시간에 따라 변화하는 데이터&rdquo;**를 잘 처리할 수 있는 기능이에요.</p>
+</li>
+<li>
+<p>예: 온도 센서가 1분마다 측정하는 값, 주식 가격의 시간별 변화, 스마트워치의 심박수 로그 등.</p>
+</li>
+<li>
+<p>데이터가 &ldquo;언제&rdquo; 기록됐는지가 중요하고, <strong>시간을 중심으로 분석</strong>하거나 <strong>패턴을 찾는 데</strong> 강해요.</p>
+</li>
+</ul>
+<p>➡️ 인포믹스는 이런 시계열 데이터를 효율적으로 저장하고 빠르게 분석하는 기능이 내장돼 있어서 <strong>IoT나 실시간 모니터링 시스템</strong>에 많이 쓰여요.</p>
+<h3 id="-자기-관리-기능self-managing이란">
+  🧠 **자기 관리 기능(Self-Managing)**이란?
+  <a class="anchor" href="#-%ec%9e%90%ea%b8%b0-%ea%b4%80%eb%a6%ac-%ea%b8%b0%eb%8a%a5self-managing%ec%9d%b4%eb%9e%80">#</a>
+</h3>
+<ul>
+<li>
+<p>말 그대로 데이터베이스가 <strong>스스로 상태를 모니터링하고 최적화</strong>한다는 의미예요.</p>
+</li>
+<li>
+<p>예를 들면:</p>
+<ul>
+<li>
+<p>성능이 느려지면 자동으로 인덱스 정리</p>
+</li>
+<li>
+<p>공간이 부족해지면 경고 알림 또는 자동 압축</p>
+</li>
+<li>
+<p>장애가 생기면 자동 복구 또는 로그 남김</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>➡️ 이 덕분에 사용자가 직접 조정하지 않아도 <strong>안정적으로 돌아가요.</strong></p>
+<h3 id="-dba란">
+  👨‍💼 DBA란?
+  <a class="anchor" href="#-dba%eb%9e%80">#</a>
+</h3>
+<ul>
+<li>
+<p><strong>Database Administrator</strong>의 약자예요.</p>
+</li>
+<li>
+<p>데이터베이스를 설치하고, 백업하고, 성능을 관리하는 전문가예요.</p>
+</li>
+<li>
+<p>복잡한 시스템일수록 필요한 역할인데, 인포믹스는 이런 DBA 없이도 운영할 수 있도록 <strong>간편하고 자동화된 기능</strong>을 많이 갖추고 있는 거죠!</p>
+</li>
+</ul>
+<p>🙌 정리하면:</p>
+<blockquote>
+<p>인포믹스는 <strong>시간 중심의 데이터 처리에 강하고</strong>, <strong>스스로 잘 관리되는 시스템</strong>이라서, 전문가 없이도 쓸 수 있는 “똑똑한 데이터베이스”라고 할 수 있어요.</p></blockquote>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#-오라클과-인포믹스의-주요-차이점">🔍 오라클과 인포믹스의 주요 차이점</a></li>
+        <li><a href="#-인포믹스의-강점">💡 인포믹스의 강점</a></li>
+        <li><a href="#-시계열-데이터-지원이란">⏱️ <strong>시계열 데이터 지원</strong>이란?</a></li>
+        <li><a href="#-자기-관리-기능self-managing이란">🧠 **자기 관리 기능(Self-Managing)**이란?</a></li>
+        <li><a href="#-dba란">👨‍💼 DBA란?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

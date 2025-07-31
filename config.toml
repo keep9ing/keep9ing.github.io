@@ -9,6 +9,12 @@ buildDrafts = false
 # 로컬 개발 서버 포트
 port = 1313
 
+[params]
+BookSection = "docs"   # 메뉴로 사용할 콘텐츠 폴더
+BookToC = true         # 우측 목차 표시 여부
+showDate = true        # 날짜 표시 여부
+BookDateFormat = "2025-07-31"
+
 [[menu.main]]
   name = "Home"
   url = "/"

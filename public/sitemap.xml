@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
-    <lastmod>2025-07-30T17:41:51+09:00</lastmod>
+    <loc>http://localhost:1313/docs/folder/sample/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/folder/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/2025-07-21/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/2025-07-16/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-07-30T17:41:51+09:00</lastmod>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/2025-07-17/</loc>
+    <lastmod>2025-07-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>

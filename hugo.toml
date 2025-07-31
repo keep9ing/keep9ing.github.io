@@ -1,4 +1,4 @@
 baseURL = "https://keep9ing.github.io/"
 languageCode = "ko-kr"
-title = 'dev log'
+title = '기록하자 뭐든'
 theme = "hugo-book"

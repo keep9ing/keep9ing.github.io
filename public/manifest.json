@@ -1,6 +1,6 @@
 {
-  "name": "dev log",
-  "short_name": "dev log",
+  "name": "기록하자 뭐든",
+  "short_name": "기록하자 뭐든",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
