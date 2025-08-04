@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/docs/about/</loc>
+    <lastmod>2025-07-30T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/docs/folder/sample/</loc>
     <lastmod>2025-07-30T00:00:00+00:00</lastmod>
   </url><url>
@@ -23,7 +26,11 @@
     <loc>http://localhost:1313/docs/2025-07-17/</loc>
     <lastmod>2025-07-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/2025-07-31/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

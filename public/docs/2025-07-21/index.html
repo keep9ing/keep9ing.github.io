@@ -81,9 +81,9 @@ Select Case (조건이 많을 때)
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="http://localhost:1313/docs/2025-07-21/">
-<link rel="stylesheet" href="/book.min.dfad06399a8124687cfda83270af26d4e3edd9d7fb66f7e22ac0a7a96c6ab0e7.css" integrity="sha256-360GOZqBJGh8/agycK8m1OPt2df7ZvfiKsCnqWxqsOc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css" integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg&#43;Lxvuodz54=" crossorigin="anonymous">
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.fad6d94a537ff8ce8b63d7f5e3ff8f3b9363862b9c6a4b5d8fe53b29fe838dfd.js" integrity="sha256-&#43;tbZSlN/&#43;M6LY9f14/&#43;PO5Njhiucaktdj&#43;U7Kf6Djf0=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.c66a41dba6f6ee0f3edf15e93886f47bec576c3c8ebc6455a8e6d5c02ad4a8f6.js" integrity="sha256-xmpB26b27g8&#43;3xXpOIb0e&#43;xXbDyOvGRVqObVwCrUqPY=" crossorigin="anonymous"></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -128,6 +128,19 @@ https://github.com/alex-shpak/hugo-book
 
   
   <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/about/" class="">About</a>
+  
+
+        </li>
+      
     
       
         <li>
@@ -194,6 +207,32 @@ https://github.com/alex-shpak/hugo-book
 
   
     <a href="/docs/2025-07-17/" class="">인포믹스는 뭔데..</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/2025-07-31/" class="">C# 뭔데</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/" class="">sql문 연습</a>
   
 
         </li>
@@ -275,6 +314,8 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#-3-데이터베이스-연결-db-connection">🗄️ 3. 데이터베이스 연결 (DB Connection)</a>
       <ul>
         <li><a href="#-연결-및-조회-예시">📌 연결 및 조회 예시</a></li>
+        <li><a href="#-sql-injection이란">💣 SQL Injection이란?</a></li>
+        <li><a href="#-방어-방법">🔐 방어 방법</a></li>
       </ul>
     </li>
   </ul>
@@ -296,8 +337,8 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>
 <p>ASP 코드는 <code>&lt;%</code> 와 <code>%&gt;</code> 사이에 작성돼요.</p>
-<pre tabindex="0"><code>&lt;% Response.Write &#34;Hello ASP!&#34; %&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;% Response.Write <span style="color:#e6db74">&#34;Hello ASP!&#34;</span> %&gt;
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="-변수-선언">
   📌 변수 선언
@@ -305,9 +346,9 @@ https://github.com/alex-shpak/hugo-book
 </h3>
 <ul>
 <li><code>Dim</code> 키워드로 변수 선언
-<pre tabindex="0"><code>Dim userName
-userName = &#34;JIHYE&#34;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>Dim userName
+</span></span><span style="display:flex;"><span>userName = <span style="color:#e6db74">&#34;JIHYE&#34;</span>
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="-조건문">
   🔁 조건문
@@ -316,31 +357,31 @@ userName = &#34;JIHYE&#34;
 <ul>
 <li>
 <p><code>If...Then...Else</code></p>
-<pre tabindex="0"><code>&lt;% 
-  Dim age
-  age = 25
-  If age &gt;= 20 Then
-    Response.Write &#34;성인입니다.&#34;
-  Else
-    Response.Write &#34;미성년자입니다.&#34;
-  End If
-%&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;% 
+</span></span><span style="display:flex;"><span>  Dim age
+</span></span><span style="display:flex;"><span>  age = <span style="color:#ae81ff">25</span>
+</span></span><span style="display:flex;"><span>  If age &gt;= <span style="color:#ae81ff">20</span> Then
+</span></span><span style="display:flex;"><span>    Response.Write <span style="color:#e6db74">&#34;성인입니다.&#34;</span>
+</span></span><span style="display:flex;"><span>  Else
+</span></span><span style="display:flex;"><span>    Response.Write <span style="color:#e6db74">&#34;미성년자입니다.&#34;</span>
+</span></span><span style="display:flex;"><span>  End If
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div></li>
 <li>
 <p><code>Select Case</code> (조건이 많을 때)</p>
-<pre tabindex="0"><code>&lt;% 
-  Dim grade
-  grade = &#34;A&#34;
-  Select Case grade
-    Case &#34;A&#34;
-      Response.Write &#34;우수&#34;
-    Case &#34;B&#34;
-      Response.Write &#34;양호&#34;
-    Case Else
-      Response.Write &#34;재시험&#34;
-  End Select
-%&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;% 
+</span></span><span style="display:flex;"><span>  Dim grade
+</span></span><span style="display:flex;"><span>  grade = <span style="color:#e6db74">&#34;A&#34;</span>
+</span></span><span style="display:flex;"><span>  Select Case grade
+</span></span><span style="display:flex;"><span>    Case <span style="color:#e6db74">&#34;A&#34;</span>
+</span></span><span style="display:flex;"><span>      Response.Write <span style="color:#e6db74">&#34;우수&#34;</span>
+</span></span><span style="display:flex;"><span>    Case <span style="color:#e6db74">&#34;B&#34;</span>
+</span></span><span style="display:flex;"><span>      Response.Write <span style="color:#e6db74">&#34;양호&#34;</span>
+</span></span><span style="display:flex;"><span>    Case Else
+</span></span><span style="display:flex;"><span>      Response.Write <span style="color:#e6db74">&#34;재시험&#34;</span>
+</span></span><span style="display:flex;"><span>  End Select
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="-반복문">
   🔄 반복문
@@ -349,24 +390,24 @@ userName = &#34;JIHYE&#34;
 <ul>
 <li>
 <p>`For&hellip;Next</p>
-<pre tabindex="0"><code>&lt;% 
-  Dim i
-  For i = 1 To 5
-    Response.Write i &amp; &#34;&lt;br&gt;&#34;
-  Next
-%&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;% 
+</span></span><span style="display:flex;"><span>  Dim i
+</span></span><span style="display:flex;"><span>  For i = <span style="color:#ae81ff">1</span> To <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    Response.Write i &amp; <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  Next
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div></li>
 <li>
 <p><code>Do While...Loop</code></p>
-<pre tabindex="0"><code>&lt;% 
-  Dim i
-  i = 1
-  Do While i &lt;= 5
-    Response.Write i &amp; &#34;&lt;br&gt;&#34;
-    i = i + 1
-  Loop
-%&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;% 
+</span></span><span style="display:flex;"><span>  Dim i
+</span></span><span style="display:flex;"><span>  i = <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  Do While i &lt;= <span style="color:#ae81ff">5</span>
+</span></span><span style="display:flex;"><span>    Response.Write i &amp; <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>    i = i + <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  Loop
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div></li>
 </ul>
 <h3 id="-내장-함수-예시">
   🧮 내장 함수 예시
@@ -413,21 +454,21 @@ userName = &#34;JIHYE&#34;
   <a class="anchor" href="#-html-%ed%8f%bc-%ec%98%88%ec%8b%9c">#</a>
 </h3>
 <p>html</p>
-<pre tabindex="0"><code>&lt;form method=&#34;post&#34; action=&#34;process.asp&#34;&gt;
-  이름: &lt;input type=&#34;text&#34; name=&#34;username&#34;&gt;&lt;br&gt;
-  &lt;input type=&#34;submit&#34; value=&#34;전송&#34;&gt;
-&lt;/form&gt;
-</code></pre><h3 id="-asp-처리-코드-processasp">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;process.asp&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  이름: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;username&#34;</span>&gt;&lt;<span style="color:#f92672">br</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;전송&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">form</span>&gt;
+</span></span></code></pre></div><h3 id="-asp-처리-코드-processasp">
   📌 ASP 처리 코드 (<code>process.asp</code>)
   <a class="anchor" href="#-asp-%ec%b2%98%eb%a6%ac-%ec%bd%94%eb%93%9c-processasp">#</a>
 </h3>
 <p>asp</p>
-<pre tabindex="0"><code>&lt;%
-Dim userName
-userName = Request.Form(&#34;username&#34;)
-Response.Write &#34;입력한 이름은: &#34; &amp; userName
-%&gt;
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;%
+</span></span><span style="display:flex;"><span>Dim userName
+</span></span><span style="display:flex;"><span>userName = Request.Form(<span style="color:#e6db74">&#34;username&#34;</span>)
+</span></span><span style="display:flex;"><span>Response.Write <span style="color:#e6db74">&#34;입력한 이름은: &#34;</span> &amp; userName
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div><ul>
 <li><code>Request.Form(&quot;username&quot;)</code>: POST 방식으로 전달된 값</li>
 <li><code>Request.QueryString(&quot;username&quot;)</code>: GET 방식으로 전달된 값</li>
 </ul>
@@ -440,25 +481,25 @@ Response.Write &#34;입력한 이름은: &#34; &amp; userName
   📌 세션 저장
   <a class="anchor" href="#-%ec%84%b8%ec%85%98-%ec%a0%80%ec%9e%a5">#</a>
 </h3>
-<pre tabindex="0"><code>&lt;%
-Session(&#34;userID&#34;) = &#34;jihye123&#34;
-%&gt;
-</code></pre><h3 id="-세션-불러오기">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;%
+</span></span><span style="display:flex;"><span>Session(<span style="color:#e6db74">&#34;userID&#34;</span>) = <span style="color:#e6db74">&#34;jihye123&#34;</span>
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div><h3 id="-세션-불러오기">
   📌 세션 불러오기
   <a class="anchor" href="#-%ec%84%b8%ec%85%98-%eb%b6%88%eb%9f%ac%ec%98%a4%ea%b8%b0">#</a>
 </h3>
-<pre tabindex="0"><code>&lt;%
-Response.Write &#34;로그인한 사용자: &#34; &amp; Session(&#34;userID&#34;)
-%&gt;
-</code></pre><h3 id="-세션-삭제">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;%
+</span></span><span style="display:flex;"><span>Response.Write <span style="color:#e6db74">&#34;로그인한 사용자: &#34;</span> &amp; Session(<span style="color:#e6db74">&#34;userID&#34;</span>)
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div><h3 id="-세션-삭제">
   📌 세션 삭제
   <a class="anchor" href="#-%ec%84%b8%ec%85%98-%ec%82%ad%ec%a0%9c">#</a>
 </h3>
-<pre tabindex="0"><code>&lt;%
-Session.Contents.Remove(&#34;userID&#34;) &#39; 특정 세션 삭제
-Session.Abandon() &#39; 전체 세션 종료
-%&gt;
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;%
+</span></span><span style="display:flex;"><span>Session.Contents.Remove(<span style="color:#e6db74">&#34;userID&#34;</span>) <span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#960050;background-color:#1e0010">특정</span> <span style="color:#960050;background-color:#1e0010">세션</span> <span style="color:#960050;background-color:#1e0010">삭제</span>
+</span></span><span style="display:flex;"><span>Session.Abandon() <span style="color:#960050;background-color:#1e0010">&#39;</span> <span style="color:#960050;background-color:#1e0010">전체</span> <span style="color:#960050;background-color:#1e0010">세션</span> <span style="color:#960050;background-color:#1e0010">종료</span>
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div><ul>
 <li>세션은 브라우저를 닫거나 일정 시간이 지나면 자동 종료돼요.</li>
 <li>기본 타임아웃은 20분이며 <code>Session.Timeout = 30</code>으로 변경 가능</li>
 </ul>
@@ -471,28 +512,47 @@ Session.Abandon() &#39; 전체 세션 종료
   📌 연결 및 조회 예시
   <a class="anchor" href="#-%ec%97%b0%ea%b2%b0-%eb%b0%8f-%ec%a1%b0%ed%9a%8c-%ec%98%88%ec%8b%9c">#</a>
 </h3>
-<pre tabindex="0"><code>&lt;%
-Dim conn, rs, sql
-Set conn = Server.CreateObject(&#34;ADODB.Connection&#34;)
-conn.Open &#34;Provider=SQLOLEDB;Data Source=서버주소;Initial Catalog=DB이름;User ID=아이디;Password=비번&#34;
-
-sql = &#34;SELECT * FROM Users&#34;
-Set rs = conn.Execute(sql)
-
-Do While Not rs.EOF
-  Response.Write rs(&#34;Name&#34;) &amp; &#34;&lt;br&gt;&#34;
-  rs.MoveNext
-Loop
-
-rs.Close
-Set rs = Nothing
-conn.Close
-Set conn = Nothing
-%&gt;
-</code></pre><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>&lt;%
+</span></span><span style="display:flex;"><span>Dim conn, rs, sql
+</span></span><span style="display:flex;"><span>Set conn = Server.CreateObject(<span style="color:#e6db74">&#34;ADODB.Connection&#34;</span>)
+</span></span><span style="display:flex;"><span>conn.Open <span style="color:#e6db74">&#34;Provider=SQLOLEDB;Data Source=서버주소;Initial Catalog=DB이름;User ID=아이디;Password=비번&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sql = <span style="color:#e6db74">&#34;SELECT * FROM Users&#34;</span>
+</span></span><span style="display:flex;"><span>Set rs = conn.Execute(sql)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Do While Not rs.EOF
+</span></span><span style="display:flex;"><span>  Response.Write rs(<span style="color:#e6db74">&#34;Name&#34;</span>) &amp; <span style="color:#e6db74">&#34;&lt;br&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>  rs.MoveNext
+</span></span><span style="display:flex;"><span>Loop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rs.Close
+</span></span><span style="display:flex;"><span>Set rs = Nothing
+</span></span><span style="display:flex;"><span>conn.Close
+</span></span><span style="display:flex;"><span>Set conn = Nothing
+</span></span><span style="display:flex;"><span>%&gt;
+</span></span></code></pre></div><ul>
 <li><code>ADODB.Connection</code>: DB 연결 객체</li>
 <li><code>ADODB.Recordset</code>: 결과를 담는 객체</li>
 <li>SQL Injection 방지를 위해 파라미터 처리에 주의해야 해요</li>
+</ul>
+<p>🛡️ <strong>SQL Injection</strong>은 웹 애플리케이션의 보안 취약점을 악용해 <strong>데이터베이스를 조작하거나 탈취하는 해킹 기법</strong>이에요. 주로 사용자의 입력값을 제대로 검증하지 않을 때 발생하죠.</p>
+<h3 id="-sql-injection이란">
+  💣 SQL Injection이란?
+  <a class="anchor" href="#-sql-injection%ec%9d%b4%eb%9e%80">#</a>
+</h3>
+<ul>
+<li>공격자가 <strong>악의적인 SQL 구문을 입력 필드에 삽입</strong>해, 원래 의도된 쿼리를 변경시켜버리는 방식이에요.</li>
+<li>예를 들어 로그인 폼에 <code>admin' OR '1'='1</code> 같은 값을 넣으면, 조건이 항상 참이 되어 <strong>인증 없이 로그인</strong>할 수 있게 되죠.</li>
+</ul>
+<h3 id="-방어-방법">
+  🔐 방어 방법
+  <a class="anchor" href="#-%eb%b0%a9%ec%96%b4-%eb%b0%a9%eb%b2%95">#</a>
+</h3>
+<ul>
+<li><strong>PreparedStatement / Parameterized Query 사용</strong> → 쿼리와 데이터를 분리해서 SQL 구문 삽입을 막아요.</li>
+<li><strong>입력값 검증</strong> → 화이트리스트 기반으로 허용된 값만 통과시키기</li>
+<li><strong>ORM 사용</strong> → JPA, Hibernate 같은 프레임워크는 내부적으로 안전한 쿼리 생성</li>
+<li><strong>에러 메시지 숨기기</strong> → DB 구조가 노출되지 않도록 에러를 사용자에게 보여주지 않기</li>
 </ul>
 
   <div class="flex align-center text-small book-post-date">
@@ -573,6 +633,8 @@ Set conn = Nothing
     <li><a href="#-3-데이터베이스-연결-db-connection">🗄️ 3. 데이터베이스 연결 (DB Connection)</a>
       <ul>
         <li><a href="#-연결-및-조회-예시">📌 연결 및 조회 예시</a></li>
+        <li><a href="#-sql-injection이란">💣 SQL Injection이란?</a></li>
+        <li><a href="#-방어-방법">🔐 방어 방법</a></li>
       </ul>
     </li>
   </ul>
