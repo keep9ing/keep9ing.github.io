@@ -2,6 +2,7 @@
 title: "2025-08-04"
 date: "2025-08-04"
 draft: false
+tags: ["sql", "Backend"]
 ---
 
 
