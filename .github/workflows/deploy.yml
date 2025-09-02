@@ -22,8 +22,11 @@ jobs:
         with:
           hugo-version: 'latest'
 
+      - name: 🧹 기존 빌드 파일 정리
+        run: rm -rf public/
+
       - name: Hugo 빌드
-        run: hugo --minify
+        run: hugo --minify --cleanDestinationDir
 
       - name: 📦 Pages용 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
