@@ -2,3 +2,5 @@ baseURL = "https://keep9ing.github.io/"
 languageCode = "ko-kr"
 title = '기록하자 뭐든'
 theme = "hugo-book"
+buildDrafts = false  # 이게 true로 되어 있으면 draft도 빌드됨
+publishDir = "public"
