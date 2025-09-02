@@ -1,5 +1,5 @@
 ---
-title: "sql문 연습"
+title: "2025-08-04"
 date: "2025-08-04"
 draft: false
 ---
