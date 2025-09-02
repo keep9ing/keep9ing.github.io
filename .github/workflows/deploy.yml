@@ -35,13 +35,9 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-          name: github-pages-${{ github.run_id }}  # 고유한 이름 생성
 
       - name: 🚀 GitHub Pages에 배포
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages-${{ github.run_id }}  # 동일한 이름 참조
+          artifact_name: github-pages-${{ github.run_id }}
           path: ./public
-
-      - name: 🚀 GitHub Pages에 배포
-        uses: actions/deploy-pages@v4
