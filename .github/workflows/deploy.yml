@@ -16,28 +16,28 @@ jobs:
     steps:
       - name: 체크아웃
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0  # 전체 히스토리 가져오기
 
-      - name: 서브모듈 강제 업데이트
+      - name: 테마 직접 다운로드 (서브모듈 우회)
         run: |
-          git submodule update --init --recursive --force
-          cd themes/hugo-book
-          git checkout main
-          git pull origin main
+          rm -rf themes/hugo-book
+          git clone https://github.com/alex-shpak/hugo-book themes/hugo-book
+          rm -rf themes/hugo-book/.git
 
       - name: Hugo 설치
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
 
-      # - name: 🧹 기존 빌드 파일 정리
-        # run: rm -rf public/
-
       - name: Hugo 빌드
         run: hugo --minify --cleanDestinationDir
 
+      - name: 📦 Pages용 아티팩트 업로드
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - name: 🚀 GitHub Pages에 배포
+        uses: actions/deploy-pages@v4
       - name: 📦 Pages용 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
         with:
