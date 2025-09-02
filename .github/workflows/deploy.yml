@@ -28,17 +28,17 @@ jobs:
         with:
           hugo-version: 'latest'
 
-      - name: Hugo 빌드
-        run: hugo --minify --cleanDestinationDir
+      - name: Hugo 빌드 (디버그 모드)
+        run: |
+          hugo version
+          hugo --minify --cleanDestinationDir --verbose
+          ls -la public/
 
       - name: 📦 Pages용 아티팩트 업로드
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
-          name: github-pages-${{ github.run_id }}
 
       - name: 🚀 GitHub Pages에 배포
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages-${{ github.run_id }}
           path: ./public

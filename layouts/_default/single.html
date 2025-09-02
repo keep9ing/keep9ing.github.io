@@ -1,16 +1,38 @@
 {{ define "main" }}
-{{ template "book/page" . }}
+<div class="flex">
+  <aside class="book-menu">
+    <div class="book-menu-content">
+      {{ template "book/menu-bundle" . }}
+    </div>
+  </aside>
 
-<!-- 하단 태그 표시만 추가 -->
-{{ if .Params.tags }}
-<footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.875rem;">
-  <div>
-    <strong>Tags:</strong>
-    {{ range $index, $tag := .Params.tags }}
-      {{ if $index }}, {{ end }}
-      <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" style="color: #0066cc; text-decoration: none;">#{{ $tag }}</a>
-    {{ end }}
+  <div class="book-page">
+    <header class="book-header">
+      {{ template "book/header" . }}
+    </header>
+
+    <article class="markdown">
+      <h1>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h1>
+
+      {{ .Content }}
+      
+      <!-- 하단 태그 표시만 추가 -->
+      {{ if .Params.tags }}
+      <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; font-size: 0.875rem;">
+        <div>
+          <strong>Tags:</strong>
+          {{ range $index, $tag := .Params.tags }}
+            {{ if $index }}, {{ end }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" style="color: #0066cc; text-decoration: none;">#{{ $tag }}</a>
+          {{ end }}
+        </div>
+      </footer>
+      {{ end }}
+    </article>
+
+    {{ template "book/toc" . }}
   </div>
-</footer>
-{{ end }}
+</div>
 {{ end }}
