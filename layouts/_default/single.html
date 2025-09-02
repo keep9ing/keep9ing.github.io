@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="book-article">
+  <h1>{{ .Title }}</h1>
+  
+  <!-- 태그 표시 영역 -->
+  {{ if .Params.tags }}
+  <div class="book-tags">
+    {{ range .Params.tags }}
+    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="book-tag">{{ . }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+  
+  <div class="book-content">
+    {{ .Content }}
+  </div>
+  
+  <!-- 하단 태그 표시 -->
+  {{ if .Params.tags }}
+  <footer class="book-footer">
+    <div class="book-tags-footer">
+      <strong>Tags:</strong>
+      {{ range $index, $tag := .Params.tags }}
+        {{ if $index }}, {{ end }}
+        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
+      {{ end }}
+    </div>
+  </footer>
+  {{ end }}
+</article>
+{{ end }}
