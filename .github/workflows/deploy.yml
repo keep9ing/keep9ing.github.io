@@ -35,6 +35,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          name: github-pages-${{ github.run_id }}
 
       - name: 🚀 GitHub Pages에 배포
         uses: actions/deploy-pages@v4
