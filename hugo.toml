@@ -7,9 +7,16 @@ buildDrafts = false
 publishDir = "public"
 cleanDestinationDir = true  # Hugo에서 제공하는 clean 옵션(깨끗한 빌드 보장)
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 [params]
   BookMenuBundle = "menu"
   BookSectionPagesMenu = false  # 자동 메뉴 생성 비활성화
+  BookToC = true
+  BookCollapseSection = true
+  BookShowTags = true  # 태그 표시 활성화
 
 [markup]
   [markup.tableOfContents]
