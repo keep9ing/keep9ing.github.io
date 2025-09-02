@@ -2,19 +2,17 @@
 <div class="flex">
   <aside class="book-menu">
     <div class="book-menu-content">
-      {{ template "book/menu-bundle" . }}
+      {{ partial "docs/menu" . }}
     </div>
   </aside>
 
   <div class="book-page">
     <header class="book-header">
-      {{ template "book/header" . }}
+      {{ partial "docs/header" . }}
     </header>
 
     <article class="markdown">
-      <h1>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      </h1>
+      <h1>{{ .Title }}</h1>
 
       {{ .Content }}
       
@@ -31,7 +29,9 @@
       </footer>
       {{ end }}
     </article>
-
+  </div>
+</div>
+{{ end }}
     {{ template "book/toc" . }}
   </div>
 </div>
