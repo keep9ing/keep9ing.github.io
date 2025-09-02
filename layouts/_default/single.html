@@ -1,31 +1,46 @@
 {{ define "main" }}
-<article class="book-article">
-  <h1>{{ .Title }}</h1>
-  
-  <!-- 태그 표시 영역 -->
-  {{ if .Params.tags }}
-  <div class="book-tags">
-    {{ range .Params.tags }}
-    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="book-tag">{{ . }}</a>
-    {{ end }}
-  </div>
-  {{ end }}
-  
-  <div class="book-content">
-    {{ .Content }}
-  </div>
-  
-  <!-- 하단 태그 표시 -->
-  {{ if .Params.tags }}
-  <footer class="book-footer">
-    <div class="book-tags-footer">
-      <strong>Tags:</strong>
-      {{ range $index, $tag := .Params.tags }}
-        {{ if $index }}, {{ end }}
-        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">#{{ $tag }}</a>
-      {{ end }}
+<div class="flex">
+  <aside class="book-menu">
+    <div class="book-menu-content">
+      {{ template "book/menu" . }}
     </div>
-  </footer>
-  {{ end }}
-</article>
+  </aside>
+
+  <div class="book-page">
+    <header class="book-header">
+      {{ template "book/header" . }}
+    </header>
+
+    <article class="markdown">
+      <h1>{{ .Title }}</h1>
+      
+      <!-- 태그 표시 영역 -->
+      {{ if .Params.tags }}
+      <div class="book-tags" style="margin: 1rem 0;">
+        {{ range .Params.tags }}
+        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" 
+           style="display: inline-block; background: #f1f1f1; color: #333; padding: 0.25rem 0.5rem; margin: 0.25rem 0.25rem 0.25rem 0; border-radius: 3px; text-decoration: none; font-size: 0.875rem;">{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+      
+      {{ .Content }}
+      
+      <!-- 하단 태그 표시 -->
+      {{ if .Params.tags }}
+      <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
+        <div>
+          <strong>Tags:</strong>
+          {{ range $index, $tag := .Params.tags }}
+            {{ if $index }}, {{ end }}
+            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" style="color: #0066cc; text-decoration: none;">#{{ $tag }}</a>
+          {{ end }}
+        </div>
+      </footer>
+      {{ end }}
+    </article>
+
+    {{ template "book/toc" . }}
+  </div>
+</div>
 {{ end }}
