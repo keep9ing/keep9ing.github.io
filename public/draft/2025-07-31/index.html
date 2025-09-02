@@ -1,0 +1,121 @@
+<!doctype html><html lang=ko-kr dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="✳️ &mldr;
+C#을.. 공부하게 되어버렸네&mldr;📚✨
+C#에서 자주 등장하는 접근 제한자와 메서드 관련 키워드들을 한꺼번에, 깔끔하고 간결하게 정리해볼게요!
+
+  🔐 접근 제한자 요약표
+  #
+
+
+  
+      
+          키워드
+          접근 가능 범위
+      
+  
+  
+      
+          private
+          현재 클래스 내부만 접근 가능
+      
+      
+          protected
+          현재 클래스 + 상속받은 자식 클래스만 접근
+      
+      
+          internal
+          같은 프로젝트(어셈블리) 내에서 접근 가능
+      
+      
+          protected internal
+          상속받은 자식 클래스 + 같은 어셈블리 접근 가능
+      
+      
+          public
+          어디서든 자유롭게 접근 가능
+      
+  
+
+class Parent {
+    private int secret = 100;
+    protected int shared = 200;
+
+    public void ShowInfo() {
+        Console.WriteLine(secret);   // OK
+        Console.WriteLine(shared);  // OK
+    }
+}
+
+class Child : Parent {
+    public void Display() {
+        // Console.WriteLine(secret); // ❌ 오류: private 접근 불가
+        Console.WriteLine(shared);    // ✅ OK: protected는 자식도 접근 가능
+    }
+}
+
+  🔧 메서드 관련 키워드 요약
+  #
+
+
+  
+      
+          키워드
+          설명
+      
+  
+  
+      
+          virtual
+          부모 클래스에서 오버라이드(재정의) 가능하도록 선언함
+      
+      
+          override
+          자식 클래스에서 부모의 virtual 메서드를 재정의할 때 사용
+      
+      
+          new
+          부모 클래스의 멤버와 **동명이인(이름 중복)**일 때, 새로 정의함
+      
+      
+          abstract
+          구현 없이 서브클래스에서 반드시 정의해야 하는 메서드나 클래스
+      
+      
+          sealed
+          더 이상 상속하거나 오버라이드하지 못하게 봉인함
+      
+  
+
+
+  ✨ 간단 비유로 기억하기!
+  #
+
+
+
+private → 내 방 비밀번호! 아무도 못 들어와!"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://keep9ing.github.io/draft/2025-07-31/"><meta property="og:site_name" content="기록하자 뭐든"><meta property="og:title" content="C# 뭔데"><meta property="og:description" content="✳️ … C#을.. 공부하게 되어버렸네…📚✨
+C#에서 자주 등장하는 접근 제한자와 메서드 관련 키워드들을 한꺼번에, 깔끔하고 간결하게 정리해볼게요!
+🔐 접근 제한자 요약표#키워드 접근 가능 범위 private 현재 클래스 내부만 접근 가능 protected 현재 클래스 + 상속받은 자식 클래스만 접근 internal 같은 프로젝트(어셈블리) 내에서 접근 가능 protected internal 상속받은 자식 클래스 + 같은 어셈블리 접근 가능 public 어디서든 자유롭게 접근 가능 class Parent { private int secret = 100; protected int shared = 200; public void ShowInfo() { Console.WriteLine(secret); // OK Console.WriteLine(shared); // OK } } class Child : Parent { public void Display() { // Console.WriteLine(secret); // ❌ 오류: private 접근 불가 Console.WriteLine(shared); // ✅ OK: protected는 자식도 접근 가능 } } 🔧 메서드 관련 키워드 요약#키워드 설명 virtual 부모 클래스에서 오버라이드(재정의) 가능하도록 선언함 override 자식 클래스에서 부모의 virtual 메서드를 재정의할 때 사용 new 부모 클래스의 멤버와 **동명이인(이름 중복)**일 때, 새로 정의함 abstract 구현 없이 서브클래스에서 반드시 정의해야 하는 메서드나 클래스 sealed 더 이상 상속하거나 오버라이드하지 못하게 봉인함 ✨ 간단 비유로 기억하기!#private → 내 방 비밀번호! 아무도 못 들어와!"><meta property="og:locale" content="ko_kr"><meta property="og:type" content="article"><meta property="article:section" content="draft"><meta property="article:published_time" content="2025-07-31T00:00:00+00:00"><meta property="article:modified_time" content="2025-07-31T00:00:00+00:00"><title>C# 뭔데 | 기록하자 뭐든</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://keep9ing.github.io/draft/2025-07-31/><link rel=stylesheet href=/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg+Lxvuodz54=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.4649afe93d74fdf5299320385a67b1a11e94683fcdf93791903273877c8e6ab3.js integrity="sha256-Rkmv6T10/fUpkyA4WmexoR6UaD/N+TeRkDJzh3yOarM=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>기록하자 뭐든</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/>sql문 연습</a></li><li><span>Folder</span><ul><li><a href=/docs/folder/sample/>sample</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>C# 뭔데</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#-접근-제한자-요약표>🔐 접근 제한자 요약표</a></li><li><a href=#-메서드-관련-키워드-요약>🔧 메서드 관련 키워드 요약</a></li><li><a href=#-간단-비유로-기억하기>✨ 간단 비유로 기억하기!</a></li><li><a href=#-using-키워드의-두-가지-주요-용도>🔑 <code>using</code> 키워드의 두 가지 주요 용도</a></li><li><a href=#-이와-함께-알아두면-좋은-핵심-키워드>💡 이와 함께 알아두면 좋은 핵심 키워드</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><p>✳️ &mldr;
+C#을.. 공부하게 되어버렸네&mldr;📚✨</p><p>C#에서 자주 등장하는 <strong>접근 제한자와 메서드 관련 키워드들</strong>을 한꺼번에, 깔끔하고 간결하게 정리해볼게요!</p><h3 id=-접근-제한자-요약표>🔐 접근 제한자 요약표
+<a class=anchor href=#-%ec%a0%91%ea%b7%bc-%ec%a0%9c%ed%95%9c%ec%9e%90-%ec%9a%94%ec%95%bd%ed%91%9c>#</a></h3><table><thead><tr><th>키워드</th><th>접근 가능 범위</th></tr></thead><tbody><tr><td><code>private</code></td><td><strong>현재 클래스 내부</strong>만 접근 가능</td></tr><tr><td><code>protected</code></td><td>현재 클래스 + <strong>상속받은 자식 클래스</strong>만 접근</td></tr><tr><td><code>internal</code></td><td><strong>같은 프로젝트(어셈블리)</strong> 내에서 접근 가능</td></tr><tr><td><code>protected internal</code></td><td>상속받은 자식 클래스 <strong>+ 같은 어셈블리</strong> 접근 가능</td></tr><tr><td><code>public</code></td><td><strong>어디서든 자유롭게</strong> 접근 가능</td></tr></tbody></table><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Parent</span> {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>int</span> secret = <span style=color:#ae81ff>100</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> shared = <span style=color:#ae81ff>200</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> ShowInfo() {
+</span></span><span style=display:flex><span>        Console.WriteLine(secret);   <span style=color:#75715e>// OK</span>
+</span></span><span style=display:flex><span>        Console.WriteLine(shared);  <span style=color:#75715e>// OK</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Child</span> : Parent {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> Display() {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// Console.WriteLine(secret); // ❌ 오류: private 접근 불가</span>
+</span></span><span style=display:flex><span>        Console.WriteLine(shared);    <span style=color:#75715e>// ✅ OK: protected는 자식도 접근 가능</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><h3 id=-메서드-관련-키워드-요약>🔧 메서드 관련 키워드 요약
+<a class=anchor href=#-%eb%a9%94%ec%84%9c%eb%93%9c-%ea%b4%80%eb%a0%a8-%ed%82%a4%ec%9b%8c%eb%93%9c-%ec%9a%94%ec%95%bd>#</a></h3><table><thead><tr><th>키워드</th><th>설명</th></tr></thead><tbody><tr><td><code>virtual</code></td><td>부모 클래스에서 <strong>오버라이드(재정의) 가능</strong>하도록 선언함</td></tr><tr><td><code>override</code></td><td>자식 클래스에서 부모의 <code>virtual</code> 메서드를 <strong>재정의</strong>할 때 사용</td></tr><tr><td><code>new</code></td><td>부모 클래스의 멤버와 **동명이인(이름 중복)**일 때, 새로 정의함</td></tr><tr><td><code>abstract</code></td><td>구현 없이 <strong>서브클래스에서 반드시 정의해야 하는</strong> 메서드나 클래스</td></tr><tr><td><code>sealed</code></td><td>더 이상 상속하거나 오버라이드하지 못하게 <strong>봉인</strong>함</td></tr></tbody></table><h3 id=-간단-비유로-기억하기>✨ 간단 비유로 기억하기!
+<a class=anchor href=#-%ea%b0%84%eb%8b%a8-%eb%b9%84%ec%9c%a0%eb%a1%9c-%ea%b8%b0%ec%96%b5%ed%95%98%ea%b8%b0>#</a></h3><ul><li><p><code>private</code> → <strong>내 방 비밀번호!</strong> 아무도 못 들어와!</p></li><li><p><code>protected</code> → <strong>가족만 출입 가능!</strong> 자식 클래스는 OK</p></li><li><p><code>public</code> → <strong>공개된 광장!</strong> 누구나 자유롭게 사용</p></li><li><p><code>virtual</code> + <code>override</code> → 부모가 &ldquo;원하면 이렇게 행동해!&rdquo; → 자식이 &ldquo;알겠어요! 하지만 좀 다르게 해볼게요!&rdquo;</p></li><li><p><code>sealed</code> → 더 이상 수정 불가! <strong>고정된 규칙</strong></p></li></ul><h3 id=-using-키워드의-두-가지-주요-용도>🔑 <code>using</code> 키워드의 두 가지 주요 용도
+<a class=anchor href=#-using-%ed%82%a4%ec%9b%8c%eb%93%9c%ec%9d%98-%eb%91%90-%ea%b0%80%ec%a7%80-%ec%a3%bc%ec%9a%94-%ec%9a%a9%eb%8f%84>#</a></h3><table><thead><tr><th>용도</th><th>설명</th><th>예시</th></tr></thead><tbody><tr><td><strong>1. 네임스페이스 가져오기</strong></td><td>클래스나 메서드를 사용할 때 전체 경로를 안 써도 되도록 함</td><td><code>using System;</code> → <code>Console.WriteLine();</code> 사용 가능</td></tr><tr><td><strong>2. 리소스 자동 해제</strong></td><td><code>IDisposable</code> 인터페이스를 구현한 객체를 사용한 후 자동으로 정리해줌</td><td>파일/DB 연결 등 <code>using (var fs = ...) { }</code></td></tr></tbody></table><p>📌 즉, <code>using</code>은 <em>코드 간결성 + 메모리 누수 방지</em> 모두 챙겨주는 유용한 키워드예요. 자원 관리를 위한 구문.
+데이터베이스 연결, 파일 등 외부 자원을 사용할 때, 자동으로 자원을 해제(Dispose)해줘요.
+예를 들어, using (SqlConnection conn = new SqlConnection(&mldr;))처럼 쓰면, 블록이 끝날 때 conn.Dispose()가 자동으로 호출돼서 메모리 누수나 자원 잠금을 방지해줘요.</p><h3 id=-이와-함께-알아두면-좋은-핵심-키워드>💡 이와 함께 알아두면 좋은 핵심 키워드
+<a class=anchor href=#-%ec%9d%b4%ec%99%80-%ed%95%a8%ea%bb%98-%ec%95%8c%ec%95%84%eb%91%90%eb%a9%b4-%ec%a2%8b%ec%9d%80-%ed%95%b5%ec%8b%ac-%ed%82%a4%ec%9b%8c%eb%93%9c>#</a></h3><table><thead><tr><th>키워드</th><th>용도 및 설명</th></tr></thead><tbody><tr><td><code>namespace</code></td><td>코드의 범주를 나눠 충돌 방지</td></tr><tr><td><code>class</code></td><td>객체를 만들기 위한 설계도</td></tr><tr><td><code>static</code></td><td>객체를 만들지 않고도 접근 가능한 멤버</td></tr><tr><td><code>void</code></td><td>값을 반환하지 않는 메서드 정의</td></tr><tr><td><code>return</code></td><td>값을 반환하거나 함수 종료</td></tr><tr><td><code>async</code> / <code>await</code></td><td>비동기 프로그래밍에 사용</td></tr><tr><td><code>try</code> / <code>catch</code> / <code>finally</code></td><td>예외 처리 흐름 제어</td></tr></tbody></table><p><img src=/images/sql-connection-example.png alt="SQL Server 연결"></p><div class="flex align-center text-small book-post-date"><span>July 31, 2025</span></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#-접근-제한자-요약표>🔐 접근 제한자 요약표</a></li><li><a href=#-메서드-관련-키워드-요약>🔧 메서드 관련 키워드 요약</a></li><li><a href=#-간단-비유로-기억하기>✨ 간단 비유로 기억하기!</a></li><li><a href=#-using-키워드의-두-가지-주요-용도>🔑 <code>using</code> 키워드의 두 가지 주요 용도</a></li><li><a href=#-이와-함께-알아두면-좋은-핵심-키워드>💡 이와 함께 알아두면 좋은 핵심 키워드</a></li></ul></li></ul></nav></div></aside></main></body></html>

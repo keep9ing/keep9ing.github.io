@@ -1,0 +1,155 @@
+<!doctype html><html lang=ko-kr dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+  🧱 기본 구조
+  #
+
+
+
+ASP 코드는 <% 와 %> 사이에 작성돼요.
+<% Response.Write "Hello ASP!" %>
+
+
+
+  📌 변수 선언
+  #
+
+
+Dim 키워드로 변수 선언
+Dim userName
+userName = "JIHYE"
+
+
+
+  🔁 조건문
+  #
+
+
+
+If...Then...Else
+<% 
+  Dim age
+  age = 25
+  If age >= 20 Then
+    Response.Write "성인입니다."
+  Else
+    Response.Write "미성년자입니다."
+  End If
+%>
+
+
+Select Case (조건이 많을 때)
+<% 
+  Dim grade
+  grade = "A"
+  Select Case grade
+    Case "A"
+      Response.Write "우수"
+    Case "B"
+      Response.Write "양호"
+    Case Else
+      Response.Write "재시험"
+  End Select
+%>
+
+
+
+  🔄 반복문
+  #
+
+
+
+`For&mldr;Next'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://keep9ing.github.io/draft/2025-07-21/"><meta property="og:site_name" content="기록하자 뭐든"><meta property="og:title" content="asp 뭔데"><meta property="og:description" content='🧱 기본 구조#ASP 코드는 <% 와 %> 사이에 작성돼요.
+<% Response.Write "Hello ASP!" %> 📌 변수 선언#Dim 키워드로 변수 선언 Dim userName userName = "JIHYE" 🔁 조건문#If...Then...Else
+<% Dim age age = 25 If age >= 20 Then Response.Write "성인입니다." Else Response.Write "미성년자입니다." End If %> Select Case (조건이 많을 때)
+<% Dim grade grade = "A" Select Case grade Case "A" Response.Write "우수" Case "B" Response.Write "양호" Case Else Response.Write "재시험" End Select %> 🔄 반복문#`For…Next'><meta property="og:locale" content="ko_kr"><meta property="og:type" content="article"><meta property="article:section" content="draft"><meta property="article:published_time" content="2025-07-30T00:00:00+00:00"><meta property="article:modified_time" content="2025-07-30T00:00:00+00:00"><title>asp 뭔데 | 기록하자 뭐든</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://keep9ing.github.io/draft/2025-07-21/><link rel=stylesheet href=/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg+Lxvuodz54=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.4649afe93d74fdf5299320385a67b1a11e94683fcdf93791903273877c8e6ab3.js integrity="sha256-Rkmv6T10/fUpkyA4WmexoR6UaD/N+TeRkDJzh3yOarM=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>기록하자 뭐든</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/>sql문 연습</a></li><li><span>Folder</span><ul><li><a href=/docs/folder/sample/>sample</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>asp 뭔데</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#-기본-구조>🧱 기본 구조</a></li><li><a href=#-변수-선언>📌 변수 선언</a></li><li><a href=#-조건문>🔁 조건문</a></li><li><a href=#-반복문>🔄 반복문</a></li><li><a href=#-내장-함수-예시>🧮 내장 함수 예시</a></li></ul></li><li><a href=#-1-폼-처리-form-handling>📝 1. 폼 처리 (Form Handling)</a><ul><li><a href=#-html-폼-예시>📌 HTML 폼 예시</a></li><li><a href=#-asp-처리-코드-processasp>📌 ASP 처리 코드 (<code>process.asp</code>)</a></li></ul></li><li><a href=#-2-세션-사용-session-handling>🔐 2. 세션 사용 (Session Handling)</a><ul><li><a href=#-세션-저장>📌 세션 저장</a></li><li><a href=#-세션-불러오기>📌 세션 불러오기</a></li><li><a href=#-세션-삭제>📌 세션 삭제</a></li></ul></li><li><a href=#-3-데이터베이스-연결-db-connection>🗄️ 3. 데이터베이스 연결 (DB Connection)</a><ul><li><a href=#-연결-및-조회-예시>📌 연결 및 조회 예시</a></li><li><a href=#-sql-injection이란>💣 SQL Injection이란?</a></li><li><a href=#-방어-방법>🔐 방어 방법</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h3 id=-기본-구조>🧱 기본 구조
+<a class=anchor href=#-%ea%b8%b0%eb%b3%b8-%ea%b5%ac%ec%a1%b0>#</a></h3><ul><li><p>ASP 코드는 <code>&lt;%</code> 와 <code>%></code> 사이에 작성돼요.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;% Response.Write <span style=color:#e6db74>&#34;Hello ASP!&#34;</span> %&gt;
+</span></span></code></pre></div></li></ul><h3 id=-변수-선언>📌 변수 선언
+<a class=anchor href=#-%eb%b3%80%ec%88%98-%ec%84%a0%ec%96%b8>#</a></h3><ul><li><code>Dim</code> 키워드로 변수 선언<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>Dim userName
+</span></span><span style=display:flex><span>userName = <span style=color:#e6db74>&#34;JIHYE&#34;</span>
+</span></span></code></pre></div></li></ul><h3 id=-조건문>🔁 조건문
+<a class=anchor href=#-%ec%a1%b0%ea%b1%b4%eb%ac%b8>#</a></h3><ul><li><p><code>If...Then...Else</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;% 
+</span></span><span style=display:flex><span>  Dim age
+</span></span><span style=display:flex><span>  age = <span style=color:#ae81ff>25</span>
+</span></span><span style=display:flex><span>  If age &gt;= <span style=color:#ae81ff>20</span> Then
+</span></span><span style=display:flex><span>    Response.Write <span style=color:#e6db74>&#34;성인입니다.&#34;</span>
+</span></span><span style=display:flex><span>  Else
+</span></span><span style=display:flex><span>    Response.Write <span style=color:#e6db74>&#34;미성년자입니다.&#34;</span>
+</span></span><span style=display:flex><span>  End If
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div></li><li><p><code>Select Case</code> (조건이 많을 때)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;% 
+</span></span><span style=display:flex><span>  Dim grade
+</span></span><span style=display:flex><span>  grade = <span style=color:#e6db74>&#34;A&#34;</span>
+</span></span><span style=display:flex><span>  Select Case grade
+</span></span><span style=display:flex><span>    Case <span style=color:#e6db74>&#34;A&#34;</span>
+</span></span><span style=display:flex><span>      Response.Write <span style=color:#e6db74>&#34;우수&#34;</span>
+</span></span><span style=display:flex><span>    Case <span style=color:#e6db74>&#34;B&#34;</span>
+</span></span><span style=display:flex><span>      Response.Write <span style=color:#e6db74>&#34;양호&#34;</span>
+</span></span><span style=display:flex><span>    Case Else
+</span></span><span style=display:flex><span>      Response.Write <span style=color:#e6db74>&#34;재시험&#34;</span>
+</span></span><span style=display:flex><span>  End Select
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div></li></ul><h3 id=-반복문>🔄 반복문
+<a class=anchor href=#-%eb%b0%98%eb%b3%b5%eb%ac%b8>#</a></h3><ul><li><p>`For&mldr;Next</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;% 
+</span></span><span style=display:flex><span>  Dim i
+</span></span><span style=display:flex><span>  For i = <span style=color:#ae81ff>1</span> To <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>    Response.Write i &amp; <span style=color:#e6db74>&#34;&lt;br&gt;&#34;</span>
+</span></span><span style=display:flex><span>  Next
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div></li><li><p><code>Do While...Loop</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;% 
+</span></span><span style=display:flex><span>  Dim i
+</span></span><span style=display:flex><span>  i = <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  Do While i &lt;= <span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span>    Response.Write i &amp; <span style=color:#e6db74>&#34;&lt;br&gt;&#34;</span>
+</span></span><span style=display:flex><span>    i = i + <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>  Loop
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div></li></ul><h3 id=-내장-함수-예시>🧮 내장 함수 예시
+<a class=anchor href=#-%eb%82%b4%ec%9e%a5-%ed%95%a8%ec%88%98-%ec%98%88%ec%8b%9c>#</a></h3><table><thead><tr><th>함수</th><th>설명</th><th>예시</th></tr></thead><tbody><tr><td><code>Now()</code></td><td>현재 날짜/시간 반환</td><td><code>Response.Write Now()</code></td></tr><tr><td><code>UCase()</code></td><td>문자열을 대문자로 변환</td><td><code>UCase("jihye") → "JIHYE"</code></td></tr><tr><td><code>Len()</code></td><td>문자열 길이 반환</td><td><code>Len("ASP") → 3</code></td></tr><tr><td><code>Replace()</code></td><td>문자열 치환</td><td><code>Replace("Hi Jihye", "Hi", "Hello")</code></td></tr></tbody></table><h2 id=-1-폼-처리-form-handling>📝 1. 폼 처리 (Form Handling)
+<a class=anchor href=#-1-%ed%8f%bc-%ec%b2%98%eb%a6%ac-form-handling>#</a></h2><p>사용자 입력을 받아 처리하는 기본 방식이에요.</p><h3 id=-html-폼-예시>📌 HTML 폼 예시
+<a class=anchor href=#-html-%ed%8f%bc-%ec%98%88%ec%8b%9c>#</a></h3><p>html</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>form</span> <span style=color:#a6e22e>method</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;post&#34;</span> <span style=color:#a6e22e>action</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;process.asp&#34;</span>&gt;
+</span></span><span style=display:flex><span>  이름: &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text&#34;</span> <span style=color:#a6e22e>name</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;username&#34;</span>&gt;&lt;<span style=color:#f92672>br</span>&gt;
+</span></span><span style=display:flex><span>  &lt;<span style=color:#f92672>input</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;submit&#34;</span> <span style=color:#a6e22e>value</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;전송&#34;</span>&gt;
+</span></span><span style=display:flex><span>&lt;/<span style=color:#f92672>form</span>&gt;
+</span></span></code></pre></div><h3 id=-asp-처리-코드-processasp>📌 ASP 처리 코드 (<code>process.asp</code>)
+<a class=anchor href=#-asp-%ec%b2%98%eb%a6%ac-%ec%bd%94%eb%93%9c-processasp>#</a></h3><p>asp</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;%
+</span></span><span style=display:flex><span>Dim userName
+</span></span><span style=display:flex><span>userName = Request.Form(<span style=color:#e6db74>&#34;username&#34;</span>)
+</span></span><span style=display:flex><span>Response.Write <span style=color:#e6db74>&#34;입력한 이름은: &#34;</span> &amp; userName
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div><ul><li><code>Request.Form("username")</code>: POST 방식으로 전달된 값</li><li><code>Request.QueryString("username")</code>: GET 방식으로 전달된 값</li></ul><h2 id=-2-세션-사용-session-handling>🔐 2. 세션 사용 (Session Handling)
+<a class=anchor href=#-2-%ec%84%b8%ec%85%98-%ec%82%ac%ec%9a%a9-session-handling>#</a></h2><p>사용자 정보를 페이지 간에 유지할 때 사용돼요.</p><h3 id=-세션-저장>📌 세션 저장
+<a class=anchor href=#-%ec%84%b8%ec%85%98-%ec%a0%80%ec%9e%a5>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;%
+</span></span><span style=display:flex><span>Session(<span style=color:#e6db74>&#34;userID&#34;</span>) = <span style=color:#e6db74>&#34;jihye123&#34;</span>
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div><h3 id=-세션-불러오기>📌 세션 불러오기
+<a class=anchor href=#-%ec%84%b8%ec%85%98-%eb%b6%88%eb%9f%ac%ec%98%a4%ea%b8%b0>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;%
+</span></span><span style=display:flex><span>Response.Write <span style=color:#e6db74>&#34;로그인한 사용자: &#34;</span> &amp; Session(<span style=color:#e6db74>&#34;userID&#34;</span>)
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div><h3 id=-세션-삭제>📌 세션 삭제
+<a class=anchor href=#-%ec%84%b8%ec%85%98-%ec%82%ad%ec%a0%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;%
+</span></span><span style=display:flex><span>Session.Contents.Remove(<span style=color:#e6db74>&#34;userID&#34;</span>) <span style=color:#960050;background-color:#1e0010>&#39;</span> <span style=color:#960050;background-color:#1e0010>특정</span> <span style=color:#960050;background-color:#1e0010>세션</span> <span style=color:#960050;background-color:#1e0010>삭제</span>
+</span></span><span style=display:flex><span>Session.Abandon() <span style=color:#960050;background-color:#1e0010>&#39;</span> <span style=color:#960050;background-color:#1e0010>전체</span> <span style=color:#960050;background-color:#1e0010>세션</span> <span style=color:#960050;background-color:#1e0010>종료</span>
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div><ul><li>세션은 브라우저를 닫거나 일정 시간이 지나면 자동 종료돼요.</li><li>기본 타임아웃은 20분이며 <code>Session.Timeout = 30</code>으로 변경 가능</li></ul><h2 id=-3-데이터베이스-연결-db-connection>🗄️ 3. 데이터베이스 연결 (DB Connection)
+<a class=anchor href=#-3-%eb%8d%b0%ec%9d%b4%ed%84%b0%eb%b2%a0%ec%9d%b4%ec%8a%a4-%ec%97%b0%ea%b2%b0-db-connection>#</a></h2><p>ASP에서 DB와 연결해 데이터를 조회하거나 저장할 수 있어요.</p><h3 id=-연결-및-조회-예시>📌 연결 및 조회 예시
+<a class=anchor href=#-%ec%97%b0%ea%b2%b0-%eb%b0%8f-%ec%a1%b0%ed%9a%8c-%ec%98%88%ec%8b%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;%
+</span></span><span style=display:flex><span>Dim conn, rs, sql
+</span></span><span style=display:flex><span>Set conn = Server.CreateObject(<span style=color:#e6db74>&#34;ADODB.Connection&#34;</span>)
+</span></span><span style=display:flex><span>conn.Open <span style=color:#e6db74>&#34;Provider=SQLOLEDB;Data Source=서버주소;Initial Catalog=DB이름;User ID=아이디;Password=비번&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>sql = <span style=color:#e6db74>&#34;SELECT * FROM Users&#34;</span>
+</span></span><span style=display:flex><span>Set rs = conn.Execute(sql)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Do While Not rs.EOF
+</span></span><span style=display:flex><span>  Response.Write rs(<span style=color:#e6db74>&#34;Name&#34;</span>) &amp; <span style=color:#e6db74>&#34;&lt;br&gt;&#34;</span>
+</span></span><span style=display:flex><span>  rs.MoveNext
+</span></span><span style=display:flex><span>Loop
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>rs.Close
+</span></span><span style=display:flex><span>Set rs = Nothing
+</span></span><span style=display:flex><span>conn.Close
+</span></span><span style=display:flex><span>Set conn = Nothing
+</span></span><span style=display:flex><span>%&gt;
+</span></span></code></pre></div><ul><li><code>ADODB.Connection</code>: DB 연결 객체</li><li><code>ADODB.Recordset</code>: 결과를 담는 객체</li><li>SQL Injection 방지를 위해 파라미터 처리에 주의해야 해요</li></ul><p>🛡️ <strong>SQL Injection</strong>은 웹 애플리케이션의 보안 취약점을 악용해 <strong>데이터베이스를 조작하거나 탈취하는 해킹 기법</strong>이에요. 주로 사용자의 입력값을 제대로 검증하지 않을 때 발생하죠.</p><h3 id=-sql-injection이란>💣 SQL Injection이란?
+<a class=anchor href=#-sql-injection%ec%9d%b4%eb%9e%80>#</a></h3><ul><li>공격자가 <strong>악의적인 SQL 구문을 입력 필드에 삽입</strong>해, 원래 의도된 쿼리를 변경시켜버리는 방식이에요.</li><li>예를 들어 로그인 폼에 <code>admin' OR '1'='1</code> 같은 값을 넣으면, 조건이 항상 참이 되어 <strong>인증 없이 로그인</strong>할 수 있게 되죠.</li></ul><h3 id=-방어-방법>🔐 방어 방법
+<a class=anchor href=#-%eb%b0%a9%ec%96%b4-%eb%b0%a9%eb%b2%95>#</a></h3><ul><li><strong>PreparedStatement / Parameterized Query 사용</strong> → 쿼리와 데이터를 분리해서 SQL 구문 삽입을 막아요.</li><li><strong>입력값 검증</strong> → 화이트리스트 기반으로 허용된 값만 통과시키기</li><li><strong>ORM 사용</strong> → JPA, Hibernate 같은 프레임워크는 내부적으로 안전한 쿼리 생성</li><li><strong>에러 메시지 숨기기</strong> → DB 구조가 노출되지 않도록 에러를 사용자에게 보여주지 않기</li></ul><div class="flex align-center text-small book-post-date"><span>July 30, 2025</span></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#-기본-구조>🧱 기본 구조</a></li><li><a href=#-변수-선언>📌 변수 선언</a></li><li><a href=#-조건문>🔁 조건문</a></li><li><a href=#-반복문>🔄 반복문</a></li><li><a href=#-내장-함수-예시>🧮 내장 함수 예시</a></li></ul></li><li><a href=#-1-폼-처리-form-handling>📝 1. 폼 처리 (Form Handling)</a><ul><li><a href=#-html-폼-예시>📌 HTML 폼 예시</a></li><li><a href=#-asp-처리-코드-processasp>📌 ASP 처리 코드 (<code>process.asp</code>)</a></li></ul></li><li><a href=#-2-세션-사용-session-handling>🔐 2. 세션 사용 (Session Handling)</a><ul><li><a href=#-세션-저장>📌 세션 저장</a></li><li><a href=#-세션-불러오기>📌 세션 불러오기</a></li><li><a href=#-세션-삭제>📌 세션 삭제</a></li></ul></li><li><a href=#-3-데이터베이스-연결-db-connection>🗄️ 3. 데이터베이스 연결 (DB Connection)</a><ul><li><a href=#-연결-및-조회-예시>📌 연결 및 조회 예시</a></li><li><a href=#-sql-injection이란>💣 SQL Injection이란?</a></li><li><a href=#-방어-방법>🔐 방어 방법</a></li></ul></li></ul></nav></div></aside></main></body></html>

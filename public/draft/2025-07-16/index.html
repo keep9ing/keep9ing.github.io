@@ -1,0 +1,251 @@
+<!doctype html><html lang=ko-kr dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
+[!question] asp라는건.. C#을 기반으로 하는 건가?
+네, 맞습니다! ASP.NET은 C#을 기반으로 하는 웹 개발 프레임워크입니다.
+
+  🔍 ASP.NET과 C#의 관계
+  #
+
+
+  📋 ASP.NET이란?
+  #
+
+
+Microsoft에서 개발한 웹 개발 프레임워크
+.NET Framework 위에서 동작
+서버사이드 웹 애플리케이션 개발용
+
+
+  💻 지원하는 언어들
+  #
+
+ASP.NET은 여러 언어를 지원하지만, 주로 사용되는 언어들:
+// C# (가장 많이 사용됨)
+<%@ Page Language="C#" %>
+
+// VB.NET
+<%@ Page Language="VB" %>
+
+// F#
+<%@ Page Language="F#" %>
+
+  🔧 현재 프로젝트에서 C# 사용 부분
+  #
+
+<script runat="server">
+    // 이 부분이 모두 C# 코드입니다
+    protected void btnSubmit_Click(object sender, EventArgs e)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(txtName.Text))  // C# 문법
+            {
+                ShowError("이름을 입력해주세요.");
+                return;
+            }
+            
+            // C# 반복문
+            foreach (ListItem item in cblHobbies.Items)
+            {
+                if (item.Selected)
+                {
+                    // C# 문자열 처리
+                    selectedHobbies += item.Text;
+                }
+            }
+        }
+        catch (Exception ex)  // C# 예외 처리
+        {
+            ShowError("오류: " + ex.Message);
+        }
+    }
+}
+</script>
+
+  📊 ASP.NET의 구조
+  #
+
+┌─────────────────────────────────┐
+│        ASP.NET Web Forms        │  ← 웹 UI 프레임워크
+├─────────────────────────────────┤
+│             C#                  │  ← 프로그래밍 언어
+├─────────────────────────────────┤
+│        .NET Framework           │  ← 런타임 플랫폼
+├─────────────────────────────────┤
+│             IIS                 │  ← 웹 서버
+└─────────────────────────────────┘
+
+  🚀 C# 주요 특징 (ASP.NET에서 사용)
+  #
+
+
+객체지향 프로그래밍
+강타입 언어
+이벤트 기반 프로그래밍
+자동 메모리 관리
+풍부한 라이브러리
+
+
+  📋 ASP.NET Web Forms vs ASP.NET Core
+  #
+
+
+  
+      
+          구분
+          ASP.NET Web Forms
+          ASP.NET Core
+      
+  
+  
+      
+          기반
+          .NET Framework + C#
+          .NET Core/5+ + C#
+      
+      
+          플랫폼
+          Windows만
+          크로스 플랫폼
+      
+      
+          방식
+          이벤트 기반
+          MVC 패턴
+      
+      
+          현재 상태
+          레거시
+          최신
+      
+  
+
+현재 작업하고 있는 것은 ASP.NET Web Forms이며, 이는 C#을 사용하여 서버사이드 로직을 처리하고 HTML을 동적으로 생성하는 방식입니다!'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://keep9ing.github.io/draft/2025-07-16/"><meta property="og:site_name" content="기록하자 뭐든"><meta property="og:title" content="asp.. c# ?"><meta property="og:description" content='[!question] asp라는건.. C#을 기반으로 하는 건가?
+네, 맞습니다! ASP.NET은 C#을 기반으로 하는 웹 개발 프레임워크입니다.
+🔍 ASP.NET과 C#의 관계#📋 ASP.NET이란?#Microsoft에서 개발한 웹 개발 프레임워크 .NET Framework 위에서 동작 서버사이드 웹 애플리케이션 개발용 💻 지원하는 언어들#ASP.NET은 여러 언어를 지원하지만, 주로 사용되는 언어들:
+// C# (가장 많이 사용됨) <%@ Page Language="C#" %> // VB.NET <%@ Page Language="VB" %> // F# <%@ Page Language="F#" %> 🔧 현재 프로젝트에서 C# 사용 부분#<script runat="server"> // 이 부분이 모두 C# 코드입니다 protected void btnSubmit_Click(object sender, EventArgs e) { try { if (string.IsNullOrEmpty(txtName.Text)) // C# 문법 { ShowError("이름을 입력해주세요."); return; } // C# 반복문 foreach (ListItem item in cblHobbies.Items) { if (item.Selected) { // C# 문자열 처리 selectedHobbies += item.Text; } } } catch (Exception ex) // C# 예외 처리 { ShowError("오류: " + ex.Message); } } } </script> 📊 ASP.NET의 구조#┌─────────────────────────────────┐ │ ASP.NET Web Forms │ ← 웹 UI 프레임워크 ├─────────────────────────────────┤ │ C# │ ← 프로그래밍 언어 ├─────────────────────────────────┤ │ .NET Framework │ ← 런타임 플랫폼 ├─────────────────────────────────┤ │ IIS │ ← 웹 서버 └─────────────────────────────────┘ 🚀 C# 주요 특징 (ASP.NET에서 사용)#객체지향 프로그래밍 강타입 언어 이벤트 기반 프로그래밍 자동 메모리 관리 풍부한 라이브러리 📋 ASP.NET Web Forms vs ASP.NET Core#구분 ASP.NET Web Forms ASP.NET Core 기반 .NET Framework + C# .NET Core/5+ + C# 플랫폼 Windows만 크로스 플랫폼 방식 이벤트 기반 MVC 패턴 현재 상태 레거시 최신 현재 작업하고 있는 것은 ASP.NET Web Forms이며, 이는 C#을 사용하여 서버사이드 로직을 처리하고 HTML을 동적으로 생성하는 방식입니다!'><meta property="og:locale" content="ko_kr"><meta property="og:type" content="article"><meta property="article:section" content="draft"><meta property="article:published_time" content="2025-07-30T00:00:00+00:00"><meta property="article:modified_time" content="2025-07-30T00:00:00+00:00"><title>asp.. c# ? | 기록하자 뭐든</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://keep9ing.github.io/draft/2025-07-16/><link rel=stylesheet href=/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg+Lxvuodz54=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.4649afe93d74fdf5299320385a67b1a11e94683fcdf93791903273877c8e6ab3.js integrity="sha256-Rkmv6T10/fUpkyA4WmexoR6UaD/N+TeRkDJzh3yOarM=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>기록하자 뭐든</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/>sql문 연습</a></li><li><span>Folder</span><ul><li><a href=/docs/folder/sample/>sample</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>asp.. c# ?</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#-aspnet과-c의-관계>🔍 ASP.NET과 C#의 관계</a><ul><li><a href=#-aspnet이란>📋 ASP.NET이란?</a></li><li><a href=#-지원하는-언어들>💻 지원하는 언어들</a></li><li><a href=#-현재-프로젝트에서-c-사용-부분>🔧 현재 프로젝트에서 C# 사용 부분</a></li><li><a href=#-aspnet의-구조>📊 ASP.NET의 구조</a></li><li><a href=#-c-주요-특징-aspnet에서-사용>🚀 C# 주요 특징 (ASP.NET에서 사용)</a></li><li><a href=#-aspnet-web-forms-vs-aspnet-core>📋 ASP.NET Web Forms vs ASP.NET Core</a></li></ul></li><li><a href=#-강타입-언어의-특징>🔍 강타입 언어의 특징</a><ul><li><a href=#-타입-안전성-type-safety>📋 타입 안전성 (Type Safety)</a></li><li><a href=#-현재-aspnet-코드에서-강타입-예시>🔧 현재 ASP.NET 코드에서 강타입 예시</a></li></ul></li><li><a href=#-강타입-vs-약타입-비교>🆚 강타입 vs 약타입 비교</a></li><li><a href=#-강타입의-장점>💡 강타입의 장점</a><ul><li><a href=#1-컴파일-시-오류-발견>1. <strong>컴파일 시 오류 발견</strong></a></li><li><a href=#2-intellisense-지원>2. <strong>IntelliSense 지원</strong></a></li><li><a href=#3-런타임-오류-감소>3. <strong>런타임 오류 감소</strong></a></li><li><a href=#4-코드-가독성-향상>4. <strong>코드 가독성 향상</strong></a></li></ul></li><li><a href=#-aspnet에서-강타입의-실제-사용>🔍 ASP.NET에서 강타입의 실제 사용</a><ul><li><a href=#-asp-classic-active-server-pages>🕰️ ASP Classic (Active Server Pages)</a></li><li><a href=#-aspnet-razor-aspnet-core-포함>⚙️ ASP.NET Razor (ASP.NET Core 포함)</a></li><li><a href=#-핵심-차이-비교>🔍 핵심 차이 비교</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><blockquote><p>[!question] asp라는건.. C#을 기반으로 하는 건가?</p></blockquote><p>네, 맞습니다! <strong>ASP.NET</strong>은 <strong>C#을 기반으로 하는 웹 개발 프레임워크</strong>입니다.</p><h2 id=-aspnet과-c의-관계>🔍 ASP.NET과 C#의 관계
+<a class=anchor href=#-aspnet%ea%b3%bc-c%ec%9d%98-%ea%b4%80%ea%b3%84>#</a></h2><h3 id=-aspnet이란>📋 ASP.NET이란?
+<a class=anchor href=#-aspnet%ec%9d%b4%eb%9e%80>#</a></h3><ul><li><strong>Microsoft에서 개발한 웹 개발 프레임워크</strong></li><li><strong>.NET Framework</strong> 위에서 동작</li><li><strong>서버사이드 웹 애플리케이션</strong> 개발용</li></ul><h3 id=-지원하는-언어들>💻 지원하는 언어들
+<a class=anchor href=#-%ec%a7%80%ec%9b%90%ed%95%98%eb%8a%94-%ec%96%b8%ec%96%b4%eb%93%a4>#</a></h3><p>ASP.NET은 여러 언어를 지원하지만, 주로 사용되는 언어들:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#75715e>// C# (가장 많이 사용됨)</span>
+</span></span><span style=display:flex><span>&lt;%<span style=color:#960050;background-color:#1e0010>@</span> Page Language=<span style=color:#e6db74>&#34;C#&#34;</span> %&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// VB.NET</span>
+</span></span><span style=display:flex><span>&lt;%<span style=color:#960050;background-color:#1e0010>@</span> Page Language=<span style=color:#e6db74>&#34;VB&#34;</span> %&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// F#</span>
+</span></span><span style=display:flex><span>&lt;%<span style=color:#960050;background-color:#1e0010>@</span> Page Language=<span style=color:#e6db74>&#34;F#&#34;</span> %&gt;
+</span></span></code></pre></div><h3 id=-현재-프로젝트에서-c-사용-부분>🔧 현재 프로젝트에서 C# 사용 부분
+<a class=anchor href=#-%ed%98%84%ec%9e%ac-%ed%94%84%eb%a1%9c%ec%a0%9d%ed%8a%b8%ec%97%90%ec%84%9c-c-%ec%82%ac%ec%9a%a9-%eb%b6%80%eb%b6%84>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;script runat=<span style=color:#e6db74>&#34;server&#34;</span>&gt;
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 이 부분이 모두 C# 코드입니다</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> btnSubmit_Click(<span style=color:#66d9ef>object</span> sender, EventArgs e)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>string</span>.IsNullOrEmpty(txtName.Text))  <span style=color:#75715e>// C# 문법</span>
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                ShowError(<span style=color:#e6db74>&#34;이름을 입력해주세요.&#34;</span>);
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e>// C# 반복문</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>foreach</span> (ListItem item <span style=color:#66d9ef>in</span> cblHobbies.Items)
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (item.Selected)
+</span></span><span style=display:flex><span>                {
+</span></span><span style=display:flex><span>                    <span style=color:#75715e>// C# 문자열 처리</span>
+</span></span><span style=display:flex><span>                    selectedHobbies += item.Text;
+</span></span><span style=display:flex><span>                }
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>catch</span> (Exception ex)  <span style=color:#75715e>// C# 예외 처리</span>
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            ShowError(<span style=color:#e6db74>&#34;오류: &#34;</span> + ex.Message);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>&lt;/script&gt;
+</span></span></code></pre></div><h3 id=-aspnet의-구조>📊 ASP.NET의 구조
+<a class=anchor href=#-aspnet%ec%9d%98-%ea%b5%ac%ec%a1%b0>#</a></h3><pre tabindex=0><code>┌─────────────────────────────────┐
+│        ASP.NET Web Forms        │  ← 웹 UI 프레임워크
+├─────────────────────────────────┤
+│             C#                  │  ← 프로그래밍 언어
+├─────────────────────────────────┤
+│        .NET Framework           │  ← 런타임 플랫폼
+├─────────────────────────────────┤
+│             IIS                 │  ← 웹 서버
+└─────────────────────────────────┘
+</code></pre><h3 id=-c-주요-특징-aspnet에서-사용>🚀 C# 주요 특징 (ASP.NET에서 사용)
+<a class=anchor href=#-c-%ec%a3%bc%ec%9a%94-%ed%8a%b9%ec%a7%95-aspnet%ec%97%90%ec%84%9c-%ec%82%ac%ec%9a%a9>#</a></h3><ol><li><strong>객체지향 프로그래밍</strong></li><li><strong>강타입 언어</strong></li><li><strong>이벤트 기반 프로그래밍</strong></li><li><strong>자동 메모리 관리</strong></li><li><strong>풍부한 라이브러리</strong></li></ol><h3 id=-aspnet-web-forms-vs-aspnet-core>📋 ASP.NET Web Forms vs ASP.NET Core
+<a class=anchor href=#-aspnet-web-forms-vs-aspnet-core>#</a></h3><table><thead><tr><th>구분</th><th>ASP.NET Web Forms</th><th>ASP.NET Core</th></tr></thead><tbody><tr><td><strong>기반</strong></td><td>.NET Framework + C#</td><td>.NET Core/5+ + C#</td></tr><tr><td><strong>플랫폼</strong></td><td>Windows만</td><td>크로스 플랫폼</td></tr><tr><td><strong>방식</strong></td><td>이벤트 기반</td><td>MVC 패턴</td></tr><tr><td><strong>현재 상태</strong></td><td>레거시</td><td>최신</td></tr></tbody></table><p>현재 작업하고 있는 것은 <strong>ASP.NET Web Forms</strong>이며, 이는 C#을 사용하여 서버사이드 로직을 처리하고 HTML을 동적으로 생성하는 방식입니다!</p><p>따라서 C# 문법을 배우면 ASP.NET 개발에 직접 도움이 됩니다.</p><blockquote><p>[!question] 강타입 언어는 어떤걸 말하는거야?</p></blockquote><p>**강타입 언어(Strongly Typed Language)**는 변수의 데이터 타입을 엄격하게 관리하는 프로그래밍 언어를 말합니다.</p><h2 id=-강타입-언어의-특징>🔍 강타입 언어의 특징
+<a class=anchor href=#-%ea%b0%95%ed%83%80%ec%9e%85-%ec%96%b8%ec%96%b4%ec%9d%98-%ed%8a%b9%ec%a7%95>#</a></h2><h3 id=-타입-안전성-type-safety>📋 타입 안전성 (Type Safety)
+<a class=anchor href=#-%ed%83%80%ec%9e%85-%ec%95%88%ec%a0%84%ec%84%b1-type-safety>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#75715e>// C# (강타입) - 컴파일 시 타입 체크</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>int</span> number = <span style=color:#ae81ff>10</span>;        <span style=color:#75715e>// 정수형</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>string</span> text = <span style=color:#e6db74>&#34;Hello&#34;</span>;  <span style=color:#75715e>// 문자열형</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>bool</span> flag = <span style=color:#66d9ef>true</span>;       <span style=color:#75715e>// 불린형</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 이런 코드는 컴파일 오류 발생!</span>
+</span></span><span style=display:flex><span>number = <span style=color:#e6db74>&#34;abc&#34;</span>;  <span style=color:#75715e>// ❌ Error: 문자열을 정수에 할당 불가</span>
+</span></span><span style=display:flex><span>text = <span style=color:#ae81ff>123</span>;      <span style=color:#75715e>// ❌ Error: 숫자를 문자열에 할당 불가</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// JavaScript (약타입) - 런타임에서 자동 변환
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>number</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span>;        <span style=color:#75715e>// 숫자
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>number</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;abc&#34;</span>;         <span style=color:#75715e>// ✅ OK: 자동으로 문자열로 변환
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>result</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>10</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;5&#34;</span>;  <span style=color:#75715e>// ✅ OK: &#34;105&#34; (문자열 결합)
+</span></span></span></code></pre></div><h3 id=-현재-aspnet-코드에서-강타입-예시>🔧 현재 ASP.NET 코드에서 강타입 예시
+<a class=anchor href=#-%ed%98%84%ec%9e%ac-aspnet-%ec%bd%94%eb%93%9c%ec%97%90%ec%84%9c-%ea%b0%95%ed%83%80%ec%9e%85-%ec%98%88%ec%8b%9c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>&lt;script runat=<span style=color:#e6db74>&#34;server&#34;</span>&gt;
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 강타입 변수 선언</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> btnSubmit_Click(<span style=color:#66d9ef>object</span> sender, EventArgs e)
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// string 타입 명시</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>string</span> selectedHobbies = <span style=color:#e6db74>&#34;&#34;</span>;  <span style=color:#75715e>// 문자열</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>int</span> hobbyCount = <span style=color:#ae81ff>0</span>;           <span style=color:#75715e>// 정수</span>
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// foreach에서 타입 명시</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>foreach</span> (ListItem item <span style=color:#66d9ef>in</span> cblHobbies.Items)  <span style=color:#75715e>// ListItem 타입</span>
+</span></span><span style=display:flex><span>        {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> (item.Selected)  <span style=color:#75715e>// bool 타입 체크</span>
+</span></span><span style=display:flex><span>            {
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> (hobbyCount &gt; <span style=color:#ae81ff>0</span>) selectedHobbies += <span style=color:#e6db74>&#34;, &#34;</span>;
+</span></span><span style=display:flex><span>                selectedHobbies += item.Text;  <span style=color:#75715e>// string 타입</span>
+</span></span><span style=display:flex><span>                hobbyCount++;  <span style=color:#75715e>// int 연산</span>
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>        
+</span></span><span style=display:flex><span>        <span style=color:#75715e>// DateTime 타입 사용</span>
+</span></span><span style=display:flex><span>        DateTime.Now.ToString(<span style=color:#e6db74>&#34;yyyy-MM-dd HH:mm:ss&#34;</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// 메서드 매개변수와 반환 타입 명시</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>void</span> ShowError(<span style=color:#66d9ef>string</span> message)  <span style=color:#75715e>// string 입력, void 반환</span>
+</span></span><span style=display:flex><span>    {
+</span></span><span style=display:flex><span>        litError.Text = message;  <span style=color:#75715e>// string 할당</span>
+</span></span><span style=display:flex><span>        pnlError.Visible = <span style=color:#66d9ef>true</span>;  <span style=color:#75715e>// bool 할당</span>
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>&lt;/script&gt;
+</span></span></code></pre></div><h2 id=-강타입-vs-약타입-비교>🆚 강타입 vs 약타입 비교
+<a class=anchor href=#-%ea%b0%95%ed%83%80%ec%9e%85-vs-%ec%95%bd%ed%83%80%ec%9e%85-%eb%b9%84%ea%b5%90>#</a></h2><table><thead><tr><th>구분</th><th>강타입 (C#)</th><th>약타입 (JavaScript)</th></tr></thead><tbody><tr><td><strong>타입 선언</strong></td><td><code>int age = 25;</code></td><td><code>var age = 25;</code></td></tr><tr><td><strong>타입 변경</strong></td><td>불가능 (컴파일 오류)</td><td>가능 (런타임 변환)</td></tr><tr><td><strong>오류 발견</strong></td><td>컴파일 시점</td><td>런타임 시점</td></tr><tr><td><strong>성능</strong></td><td>빠름 (최적화됨)</td><td>상대적으로 느림</td></tr><tr><td><strong>안전성</strong></td><td>높음</td><td>낮음</td></tr><tr><td></td><td></td><td></td></tr></tbody></table><h2 id=-강타입의-장점>💡 강타입의 장점
+<a class=anchor href=#-%ea%b0%95%ed%83%80%ec%9e%85%ec%9d%98-%ec%9e%a5%ec%a0%90>#</a></h2><h3 id=1-컴파일-시-오류-발견>1. <strong>컴파일 시 오류 발견</strong>
+<a class=anchor href=#1-%ec%bb%b4%ed%8c%8c%ec%9d%bc-%ec%8b%9c-%ec%98%a4%eb%a5%98-%eb%b0%9c%ea%b2%ac>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>int</span> count = <span style=color:#e6db74>&#34;abc&#34;</span>;  <span style=color:#75715e>// ❌ 컴파일 시 즉시 오류 발견</span>
+</span></span></code></pre></div><h3 id=2-intellisense-지원>2. <strong>IntelliSense 지원</strong>
+<a class=anchor href=#2-intellisense-%ec%a7%80%ec%9b%90>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>string</span> text = <span style=color:#e6db74>&#34;Hello&#34;</span>;
+</span></span><span style=display:flex><span>text.  <span style=color:#75715e>// ← IDE에서 문자열 메서드들 자동 완성</span>
+</span></span></code></pre></div><h3 id=3-런타임-오류-감소>3. <strong>런타임 오류 감소</strong>
+<a class=anchor href=#3-%eb%9f%b0%ed%83%80%ec%9e%84-%ec%98%a4%eb%a5%98-%ea%b0%90%ec%86%8c>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#75715e>// 타입이 보장되므로 예상치 못한 오류 방지</span>
+</span></span><span style=display:flex><span>DateTime today = DateTime.Now;  <span style=color:#75715e>// 확실히 DateTime 타입</span>
+</span></span></code></pre></div><h3 id=4-코드-가독성-향상>4. <strong>코드 가독성 향상</strong>
+<a class=anchor href=#4-%ec%bd%94%eb%93%9c-%ea%b0%80%eb%8f%85%ec%84%b1-%ed%96%a5%ec%83%81>#</a></h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#75715e>// 변수의 용도가 명확함</span>
+</span></span><span style=display:flex><span>List&lt;<span style=color:#66d9ef>string</span>&gt; hobbies = <span style=color:#66d9ef>new</span> List&lt;<span style=color:#66d9ef>string</span>&gt;();
+</span></span><span style=display:flex><span>Dictionary&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>string</span>&gt; users = <span style=color:#66d9ef>new</span> Dictionary&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>string</span>&gt;();
+</span></span></code></pre></div><h2 id=-aspnet에서-강타입의-실제-사용>🔍 ASP.NET에서 강타입의 실제 사용
+<a class=anchor href=#-aspnet%ec%97%90%ec%84%9c-%ea%b0%95%ed%83%80%ec%9e%85%ec%9d%98-%ec%8b%a4%ec%a0%9c-%ec%82%ac%ec%9a%a9>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#75715e>// 서버 컨트롤들도 강타입</span>
+</span></span><span style=display:flex><span>TextBox txtName;           <span style=color:#75715e>// TextBox 타입</span>
+</span></span><span style=display:flex><span>DropDownList ddlAge;       <span style=color:#75715e>// DropDownList 타입</span>
+</span></span><span style=display:flex><span>CheckBoxList cblHobbies;   <span style=color:#75715e>// CheckBoxList 타입</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>// 이벤트 핸들러도 강타입</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> btnSubmit_Click(<span style=color:#66d9ef>object</span> sender, EventArgs e)
+</span></span><span style=display:flex><span><span style=color:#75715e>//                             ^^^^^^        ^^^^^^^^^^</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>//                          Button 타입    EventArgs 타입</span>
+</span></span></code></pre></div><p><strong>결론</strong>: 강타입 언어는 개발 시 더 많은 규칙을 요구하지만, 그 덕분에 더 안전하고 예측 가능한 코드를 작성할 수 있습니다!</p><h3 id=-asp-classic-active-server-pages>🕰️ ASP Classic (Active Server Pages)
+<a class=anchor href=#-asp-classic-active-server-pages>#</a></h3><ul><li><p><strong>출시 시기</strong>: 1996년대 후반, .NET 이전 시대</p></li><li><p><strong>언어 기반</strong>: VBScript 또는 JScript</p></li><li><p><strong>코드 구조</strong>: HTML과 서버 코드가 한 파일에 섞여 있음 (<code>&lt;% %></code> 태그로 서버 코드 삽입)</p></li><li><p><strong>특징</strong>:</p><ul><li>절차적 프로그래밍 방식</li><li>객체지향 지원 거의 없음</li><li>디버깅과 유지보수가 어려움</li><li>성능이 낮고 보안 기능이 제한적</li></ul></li></ul><h3 id=-aspnet-razor-aspnet-core-포함>⚙️ ASP.NET Razor (ASP.NET Core 포함)
+<a class=anchor href=#-aspnet-razor-aspnet-core-%ed%8f%ac%ed%95%a8>#</a></h3><ul><li><p><strong>출시 시기</strong>: 2010년대 이후, .NET Framework 및 .NET Core 기반</p></li><li><p><strong>언어 기반</strong>: C# 또는 VB.NET</p></li><li><p><strong>코드 구조</strong>: HTML과 C# 코드가 Razor 문법(<code>@</code>)으로 분리되어 있음</p></li><li><p><strong>특징</strong>:</p><ul><li>MVC 또는 Razor Pages 구조로 <strong>비즈니스 로직과 UI 분리</strong></li><li>객체지향 프로그래밍 지원</li><li>강력한 디버깅, 보안, 성능</li><li><strong>ViewModel</strong>을 통해 데이터 바인딩</li><li>HTML Helper, Tag Helper 등 다양한 도구 제공</li></ul></li></ul><h3 id=-핵심-차이-비교>🔍 핵심 차이 비교
+<a class=anchor href=#-%ed%95%b5%ec%8b%ac-%ec%b0%a8%ec%9d%b4-%eb%b9%84%ea%b5%90>#</a></h3><table><thead><tr><th>항목</th><th>ASP Classic</th><th>ASP.NET Razor</th></tr></thead><tbody><tr><td>코드 스타일</td><td>절차적</td><td>객체지향, MVC</td></tr><tr><td>언어</td><td>VBScript</td><td>C#</td></tr><tr><td>유지보수</td><td>어려움</td><td>쉬움</td></tr><tr><td>성능</td><td>낮음</td><td>높음</td></tr><tr><td>보안</td><td>제한적</td><td>강력함</td></tr><tr><td>UI/로직 분리</td><td>없음</td><td>있음 (Code-behind 또는 ViewModel)</td></tr></tbody></table><div class="flex align-center text-small book-post-date"><span>July 30, 2025</span></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#-aspnet과-c의-관계>🔍 ASP.NET과 C#의 관계</a><ul><li><a href=#-aspnet이란>📋 ASP.NET이란?</a></li><li><a href=#-지원하는-언어들>💻 지원하는 언어들</a></li><li><a href=#-현재-프로젝트에서-c-사용-부분>🔧 현재 프로젝트에서 C# 사용 부분</a></li><li><a href=#-aspnet의-구조>📊 ASP.NET의 구조</a></li><li><a href=#-c-주요-특징-aspnet에서-사용>🚀 C# 주요 특징 (ASP.NET에서 사용)</a></li><li><a href=#-aspnet-web-forms-vs-aspnet-core>📋 ASP.NET Web Forms vs ASP.NET Core</a></li></ul></li><li><a href=#-강타입-언어의-특징>🔍 강타입 언어의 특징</a><ul><li><a href=#-타입-안전성-type-safety>📋 타입 안전성 (Type Safety)</a></li><li><a href=#-현재-aspnet-코드에서-강타입-예시>🔧 현재 ASP.NET 코드에서 강타입 예시</a></li></ul></li><li><a href=#-강타입-vs-약타입-비교>🆚 강타입 vs 약타입 비교</a></li><li><a href=#-강타입의-장점>💡 강타입의 장점</a><ul><li><a href=#1-컴파일-시-오류-발견>1. <strong>컴파일 시 오류 발견</strong></a></li><li><a href=#2-intellisense-지원>2. <strong>IntelliSense 지원</strong></a></li><li><a href=#3-런타임-오류-감소>3. <strong>런타임 오류 감소</strong></a></li><li><a href=#4-코드-가독성-향상>4. <strong>코드 가독성 향상</strong></a></li></ul></li><li><a href=#-aspnet에서-강타입의-실제-사용>🔍 ASP.NET에서 강타입의 실제 사용</a><ul><li><a href=#-asp-classic-active-server-pages>🕰️ ASP Classic (Active Server Pages)</a></li><li><a href=#-aspnet-razor-aspnet-core-포함>⚙️ ASP.NET Razor (ASP.NET Core 포함)</a></li><li><a href=#-핵심-차이-비교>🔍 핵심 차이 비교</a></li></ul></li></ul></nav></div></aside></main></body></html>

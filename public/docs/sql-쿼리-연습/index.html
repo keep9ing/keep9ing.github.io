@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko-kr" dir="ltr">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="https://solvesql.com/problems/publisher-with-many-games/
+<!doctype html><html lang=ko-kr dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="https://solvesql.com/problems/publisher-with-many-games/
 SELECT
   companies.name,
   publisher_id,
@@ -14,7 +9,7 @@ FROM
 GROUP BY
   publisher_id
 HAVING
-  COUNT(*) &gt;= 10;
+  COUNT(*) >= 10;
 SELECT * FROM orders
 JOIN order_items product ON product.order_id = orders.order_id
 LIMIT 3; -- 3줄 까지만 출력
@@ -28,14 +23,14 @@ FROM points
 https://solvesql.com/problems/weekday-stats-airpollution/
 SELECT 
 -- `CASE` 문으로 숫자를 한글 요일로 변환
-  CASE strftime(&#39;%u&#39;, measured_at)
-    WHEN &#39;1&#39; THEN &#39;월요일&#39;
-    WHEN &#39;2&#39; THEN &#39;화요일&#39;
-    WHEN &#39;3&#39; THEN &#39;수요일&#39;
-    WHEN &#39;4&#39; THEN &#39;목요일&#39;
-    WHEN &#39;5&#39; THEN &#39;금요일&#39;
-    WHEN &#39;6&#39; THEN &#39;토요일&#39;
-    WHEN &#39;7&#39; THEN &#39;일요일&#39;
+  CASE strftime('%u', measured_at)
+    WHEN '1' THEN '월요일'
+    WHEN '2' THEN '화요일'
+    WHEN '3' THEN '수요일'
+    WHEN '4' THEN '목요일'
+    WHEN '5' THEN '금요일'
+    WHEN '6' THEN '토요일'
+    WHEN '7' THEN '일요일'
   END AS weekday,
   -- ROUND(..., 4) : 소수점 넷째 자리까지 반올림
   ROUND(AVG(no2), 4) AS no2,
@@ -45,421 +40,69 @@ SELECT
   ROUND(AVG(pm10), 4) AS pm10,
   ROUND(AVG(pm2_5), 4) AS pm2_5
 FROM measurements
-GROUP BY strftime(&#39;%u&#39;, measured_at)
-ORDER BY strftime(&#39;%u&#39;, measured_at);
+GROUP BY strftime('%u', measured_at)
+ORDER BY strftime('%u', measured_at);
 
 %w는 일요일을 0으로 시작하는 요일 숫자 (0~6)
 %u는 월요일을 1로 시작하는 요일 숫자 (1~7) → 우리가 원하는 요일 순서에 딱 맞아요!
 
-%w 나.. %u 이런 게&hellip; 오라클 작성할 때도 동일한가?">
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="http://localhost:1313/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/">
-  <meta property="og:site_name" content="기록하자 뭐든">
-  <meta property="og:title" content="sql문 연습">
-  <meta property="og:description" content="https://solvesql.com/problems/publisher-with-many-games/
-SELECT companies.name, publisher_id, COUNT(*) AS publishing_count FROM games JOIN companies ON games.publisher_id = companies.company_id GROUP BY publisher_id HAVING COUNT(*) &gt;= 10; SELECT * FROM orders JOIN order_items product ON product.order_id = orders.order_id LIMIT 3; -- 3줄 까지만 출력 https://solvesql.com/problems/max-row/
+%w 나.. %u 이런 게&mldr; 오라클 작성할 때도 동일한가?"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://keep9ing.github.io/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/"><meta property="og:site_name" content="기록하자 뭐든"><meta property="og:title" content="sql문 연습"><meta property="og:description" content="https://solvesql.com/problems/publisher-with-many-games/
+SELECT companies.name, publisher_id, COUNT(*) AS publishing_count FROM games JOIN companies ON games.publisher_id = companies.company_id GROUP BY publisher_id HAVING COUNT(*) >= 10; SELECT * FROM orders JOIN order_items product ON product.order_id = orders.order_id LIMIT 3; -- 3줄 까지만 출력 https://solvesql.com/problems/max-row/
 SELECT id -- id만 출력.. FROM points WHERE x = (SELECT MAX(x) FROM points) -- 서브쿼리 OR y = (SELECT MAX(y) FROM points) -- 서브쿼리 ORDER BY id ASC; -- 오름차순 정렬 https://solvesql.com/problems/weekday-stats-airpollution/
-SELECT -- `CASE` 문으로 숫자를 한글 요일로 변환 CASE strftime(&#39;%u&#39;, measured_at) WHEN &#39;1&#39; THEN &#39;월요일&#39; WHEN &#39;2&#39; THEN &#39;화요일&#39; WHEN &#39;3&#39; THEN &#39;수요일&#39; WHEN &#39;4&#39; THEN &#39;목요일&#39; WHEN &#39;5&#39; THEN &#39;금요일&#39; WHEN &#39;6&#39; THEN &#39;토요일&#39; WHEN &#39;7&#39; THEN &#39;일요일&#39; END AS weekday, -- ROUND(..., 4) : 소수점 넷째 자리까지 반올림 ROUND(AVG(no2), 4) AS no2, ROUND(AVG(o3), 4) AS o3, ROUND(AVG(co), 4) AS co, ROUND(AVG(so2), 4) AS so2, ROUND(AVG(pm10), 4) AS pm10, ROUND(AVG(pm2_5), 4) AS pm2_5 FROM measurements GROUP BY strftime(&#39;%u&#39;, measured_at) ORDER BY strftime(&#39;%u&#39;, measured_at); %w는 일요일을 0으로 시작하는 요일 숫자 (0~6) %u는 월요일을 1로 시작하는 요일 숫자 (1~7) → 우리가 원하는 요일 순서에 딱 맞아요! %w 나.. %u 이런 게… 오라클 작성할 때도 동일한가?">
-  <meta property="og:locale" content="ko_kr">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="docs">
-    <meta property="article:published_time" content="2025-08-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-08-04T00:00:00+00:00">
-<title>sql문 연습 | 기록하자 뭐든</title>
-<link rel="icon" href="/favicon.png" >
-<link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="http://localhost:1313/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/">
-<link rel="stylesheet" href="/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css" integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg&#43;Lxvuodz54=" crossorigin="anonymous">
-  <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c66a41dba6f6ee0f3edf15e93886f47bec576c3c8ebc6455a8e6d5c02ad4a8f6.js" integrity="sha256-xmpB26b27g8&#43;3xXpOIb0e&#43;xXbDyOvGRVqObVwCrUqPY=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
-
-</head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>기록하자 뭐든</span>
-  </a>
-</h2>
-
-
-<div class="book-search hidden">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
-</div>
-<script>document.querySelector(".book-search").classList.remove("hidden")</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/about/" class="">About</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/" class="active">sql문 연습</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/2025-07-31/" class="">C# 뭔데</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <span>Folder</span>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/folder/sample/" class="">sample</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/2025-07-21/" class="">asp 뭔데</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/2025-07-16/" class="">asp.. c# ?</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/docs/2025-07-17/" class="">인포믹스는 뭔데..</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</nav>
-
-
-
-
-  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <h3>sql문 연습</h3>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
-</div>
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#-오라클에서-요일-숫자-구하는-방법">🏛️ 오라클에서 요일 숫자 구하는 방법</a></li>
-        <li><a href="#-요일을-한글로-바꾸고-싶다면">📌 요일을 한글로 바꾸고 싶다면?</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown book-article"><p><a href="https://solvesql.com/problems/publisher-with-many-games/">https://solvesql.com/problems/publisher-with-many-games/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
-</span></span><span style="display:flex;"><span>  companies.name,
-</span></span><span style="display:flex;"><span>  publisher_id,
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">AS</span> publishing_count
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span>
-</span></span><span style="display:flex;"><span>  games
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">JOIN</span> companies <span style="color:#66d9ef">ON</span> games.publisher_id <span style="color:#f92672">=</span> companies.company_id
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
-</span></span><span style="display:flex;"><span>  publisher_id
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>;
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> orders
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> order_items product <span style="color:#66d9ef">ON</span> product.order_id <span style="color:#f92672">=</span> orders.order_id
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">3</span>; <span style="color:#75715e">-- 3줄 까지만 출력
-</span></span></span></code></pre></div><p><a href="https://solvesql.com/problems/max-row/">https://solvesql.com/problems/max-row/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
-</span></span><span style="display:flex;"><span>  id <span style="color:#75715e">-- id만 출력..
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">FROM</span> points
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">WHERE</span> x <span style="color:#f92672">=</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(x) <span style="color:#66d9ef">FROM</span> points) <span style="color:#75715e">-- 서브쿼리
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">OR</span> y <span style="color:#f92672">=</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(y) <span style="color:#66d9ef">FROM</span> points) <span style="color:#75715e">-- 서브쿼리
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> id <span style="color:#66d9ef">ASC</span>; <span style="color:#75715e">-- 오름차순 정렬
-</span></span></span></code></pre></div><p><a href="https://solvesql.com/problems/weekday-stats-airpollution/">https://solvesql.com/problems/weekday-stats-airpollution/</a></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
-</span></span><span style="display:flex;"><span><span style="color:#75715e">-- `CASE` 문으로 숫자를 한글 요일로 변환
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">CASE</span> strftime(<span style="color:#e6db74">&#39;%u&#39;</span>, measured_at)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;1&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;월요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;2&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;화요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;3&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;수요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;4&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;목요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;5&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;금요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;6&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;토요일&#39;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">WHEN</span> <span style="color:#e6db74">&#39;7&#39;</span> <span style="color:#66d9ef">THEN</span> <span style="color:#e6db74">&#39;일요일&#39;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">END</span> <span style="color:#66d9ef">AS</span> weekday,
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">-- ROUND(..., 4) : 소수점 넷째 자리까지 반올림
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  ROUND(<span style="color:#66d9ef">AVG</span>(no2), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> no2,
-</span></span><span style="display:flex;"><span>  ROUND(<span style="color:#66d9ef">AVG</span>(o3), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> o3,
-</span></span><span style="display:flex;"><span>  ROUND(<span style="color:#66d9ef">AVG</span>(co), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> co,
-</span></span><span style="display:flex;"><span>  ROUND(<span style="color:#66d9ef">AVG</span>(so2), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> so2,
-</span></span><span style="display:flex;"><span>  ROUND(<span style="color:#66d9ef">AVG</span>(pm10), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> pm10,
-</span></span><span style="display:flex;"><span>  ROUND(<span style="color:#66d9ef">AVG</span>(pm2_5), <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">AS</span> pm2_5
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> measurements
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> strftime(<span style="color:#e6db74">&#39;%u&#39;</span>, measured_at)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> strftime(<span style="color:#e6db74">&#39;%u&#39;</span>, measured_at);
-</span></span></code></pre></div><ul>
-<li><code>%w</code>는 일요일을 0으로 시작하는 요일 숫자 (0~6)</li>
-<li><code>%u</code>는 월요일을 1로 시작하는 요일 숫자 (1~7) → 우리가 원하는 요일 순서에 딱 맞아요!</li>
-</ul>
-<p>%w 나.. %u 이런 게&hellip; 오라클 작성할 때도 동일한가?</p>
-<p><code>%w</code>, <code>%u</code> 같은 포맷은 <strong>SQLite나 PostgreSQL</strong> 등 일부 DB에서 사용하는 <code>strftime()</code> 함수의 포맷이에요. **오라클(Oracle)**에서는 방식이 조금 달라요.</p>
-<h3 id="-오라클에서-요일-숫자-구하는-방법">
-  🏛️ 오라클에서 요일 숫자 구하는 방법
-  <a class="anchor" href="#-%ec%98%a4%eb%9d%bc%ed%81%b4%ec%97%90%ec%84%9c-%ec%9a%94%ec%9d%bc-%ec%88%ab%ec%9e%90-%ea%b5%ac%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95">#</a>
-</h3>
-<p>오라클에서는 <code>TO_CHAR()</code> 함수를 사용해서 날짜의 요일을 숫자로 변환해요:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> TO_CHAR(SYSDATE, <span style="color:#e6db74">&#39;D&#39;</span>) <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">요일숫자</span> <span style="color:#66d9ef">FROM</span> dual;
-</span></span></code></pre></div><ul>
-<li><code>'D'</code>는 <strong>요일을 숫자로 반환</strong>하는 포맷이에요.</li>
-<li>반환되는 숫자는 <strong>NLS_TERRITORY 설정</strong>에 따라 달라질 수 있어요.
-<ul>
-<li>예: <code>1 = 일요일</code>, <code>2 = 월요일</code> … 이런 식으로 시작 요일이 달라질 수 있어요.</li>
-</ul>
-</li>
-<li>
-<h3 id="-요일을-한글로-바꾸고-싶다면">
-  📌 요일을 한글로 바꾸고 싶다면?
-  <a class="anchor" href="#-%ec%9a%94%ec%9d%bc%ec%9d%84-%ed%95%9c%ea%b8%80%eb%a1%9c-%eb%b0%94%ea%be%b8%ea%b3%a0-%ec%8b%b6%eb%8b%a4%eb%a9%b4">#</a>
-</h3>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
-</span></span><span style="display:flex;"><span>  TO_CHAR(SYSDATE, <span style="color:#e6db74">&#39;D&#39;</span>) <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">요일숫자</span>,
-</span></span><span style="display:flex;"><span>  DECODE(TO_CHAR(SYSDATE, <span style="color:#e6db74">&#39;D&#39;</span>),
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;일요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;월요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;화요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;4&#39;</span>, <span style="color:#e6db74">&#39;수요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;5&#39;</span>, <span style="color:#e6db74">&#39;목요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;6&#39;</span>, <span style="color:#e6db74">&#39;금요일&#39;</span>,
-</span></span><span style="display:flex;"><span>         <span style="color:#e6db74">&#39;7&#39;</span>, <span style="color:#e6db74">&#39;토요일&#39;</span>) <span style="color:#66d9ef">AS</span> <span style="color:#960050;background-color:#1e0010">한글요일</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> dual;
-</span></span></code></pre></div><p>이렇게 <code>DECODE()</code>를 활용하면 숫자를 한글 요일로 매핑할 수 있어요.</p>
-
-  <div class="flex align-center text-small book-post-date">
-    
-    <span>August 4, 2025</span>
-  </div>
-
-
-
-  
-
-  
-
-
-  </article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-
-
-
-</div>
-
-
-
-  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
-
-
- 
-        
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
-</div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#-오라클에서-요일-숫자-구하는-방법">🏛️ 오라클에서 요일 숫자 구하는 방법</a></li>
-        <li><a href="#-요일을-한글로-바꾸고-싶다면">📌 요일을 한글로 바꾸고 싶다면?</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-
- 
-      </div>
-    </aside>
-    
-  </main>
-
-  
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
+SELECT -- `CASE` 문으로 숫자를 한글 요일로 변환 CASE strftime('%u', measured_at) WHEN '1' THEN '월요일' WHEN '2' THEN '화요일' WHEN '3' THEN '수요일' WHEN '4' THEN '목요일' WHEN '5' THEN '금요일' WHEN '6' THEN '토요일' WHEN '7' THEN '일요일' END AS weekday, -- ROUND(..., 4) : 소수점 넷째 자리까지 반올림 ROUND(AVG(no2), 4) AS no2, ROUND(AVG(o3), 4) AS o3, ROUND(AVG(co), 4) AS co, ROUND(AVG(so2), 4) AS so2, ROUND(AVG(pm10), 4) AS pm10, ROUND(AVG(pm2_5), 4) AS pm2_5 FROM measurements GROUP BY strftime('%u', measured_at) ORDER BY strftime('%u', measured_at); %w는 일요일을 0으로 시작하는 요일 숫자 (0~6) %u는 월요일을 1로 시작하는 요일 숫자 (1~7) → 우리가 원하는 요일 순서에 딱 맞아요! %w 나.. %u 이런 게… 오라클 작성할 때도 동일한가?"><meta property="og:locale" content="ko_kr"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:published_time" content="2025-08-04T00:00:00+00:00"><meta property="article:modified_time" content="2025-08-04T00:00:00+00:00"><title>sql문 연습 | 기록하자 뭐든</title><link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://keep9ing.github.io/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/><link rel=stylesheet href=/book.min.a3c11077667c387acd633caf15dfcb1aeab07a9550af95c983e2f1beea1dcf9e.css integrity="sha256-o8EQd2Z8OHrNYzyvFd/LGuqwepVQr5XJg+Lxvuodz54=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.4649afe93d74fdf5299320385a67b1a11e94683fcdf93791903273877c8e6ab3.js integrity="sha256-Rkmv6T10/fUpkyA4WmexoR6UaD/N+TeRkDJzh3yOarM=" crossorigin=anonymous></script><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>기록하자 뭐든</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/docs/sql-%EC%BF%BC%EB%A6%AC-%EC%97%B0%EC%8A%B5/ class=active>sql문 연습</a></li><li><span>Folder</span><ul><li><a href=/docs/folder/sample/>sample</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>sql문 연습</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><ul><li><a href=#-오라클에서-요일-숫자-구하는-방법>🏛️ 오라클에서 요일 숫자 구하는 방법</a></li><li><a href=#-요일을-한글로-바꾸고-싶다면>📌 요일을 한글로 바꾸고 싶다면?</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><p><a href=https://solvesql.com/problems/publisher-with-many-games/>https://solvesql.com/problems/publisher-with-many-games/</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>  companies.name,
+</span></span><span style=display:flex><span>  publisher_id,
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#66d9ef>AS</span> publishing_count
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span>
+</span></span><span style=display:flex><span>  games
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>JOIN</span> companies <span style=color:#66d9ef>ON</span> games.publisher_id <span style=color:#f92672>=</span> companies.company_id
+</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span>
+</span></span><span style=display:flex><span>  publisher_id
+</span></span><span style=display:flex><span><span style=color:#66d9ef>HAVING</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>COUNT</span>(<span style=color:#f92672>*</span>) <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>10</span>;
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>FROM</span> orders
+</span></span><span style=display:flex><span><span style=color:#66d9ef>JOIN</span> order_items product <span style=color:#66d9ef>ON</span> product.order_id <span style=color:#f92672>=</span> orders.order_id
+</span></span><span style=display:flex><span><span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>3</span>; <span style=color:#75715e>-- 3줄 까지만 출력
+</span></span></span></code></pre></div><p><a href=https://solvesql.com/problems/max-row/>https://solvesql.com/problems/max-row/</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>  id <span style=color:#75715e>-- id만 출력..
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>FROM</span> points
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>WHERE</span> x <span style=color:#f92672>=</span> (<span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>MAX</span>(x) <span style=color:#66d9ef>FROM</span> points) <span style=color:#75715e>-- 서브쿼리
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>OR</span> y <span style=color:#f92672>=</span> (<span style=color:#66d9ef>SELECT</span> <span style=color:#66d9ef>MAX</span>(y) <span style=color:#66d9ef>FROM</span> points) <span style=color:#75715e>-- 서브쿼리
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> id <span style=color:#66d9ef>ASC</span>; <span style=color:#75715e>-- 오름차순 정렬
+</span></span></span></code></pre></div><p><a href=https://solvesql.com/problems/weekday-stats-airpollution/>https://solvesql.com/problems/weekday-stats-airpollution/</a></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
+</span></span><span style=display:flex><span><span style=color:#75715e>-- `CASE` 문으로 숫자를 한글 요일로 변환
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#66d9ef>CASE</span> strftime(<span style=color:#e6db74>&#39;%u&#39;</span>, measured_at)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;1&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;월요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;2&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;화요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;3&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;수요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;4&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;목요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;5&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;금요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;6&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;토요일&#39;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>WHEN</span> <span style=color:#e6db74>&#39;7&#39;</span> <span style=color:#66d9ef>THEN</span> <span style=color:#e6db74>&#39;일요일&#39;</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>END</span> <span style=color:#66d9ef>AS</span> weekday,
+</span></span><span style=display:flex><span>  <span style=color:#75715e>-- ROUND(..., 4) : 소수점 넷째 자리까지 반올림
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  ROUND(<span style=color:#66d9ef>AVG</span>(no2), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> no2,
+</span></span><span style=display:flex><span>  ROUND(<span style=color:#66d9ef>AVG</span>(o3), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> o3,
+</span></span><span style=display:flex><span>  ROUND(<span style=color:#66d9ef>AVG</span>(co), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> co,
+</span></span><span style=display:flex><span>  ROUND(<span style=color:#66d9ef>AVG</span>(so2), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> so2,
+</span></span><span style=display:flex><span>  ROUND(<span style=color:#66d9ef>AVG</span>(pm10), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> pm10,
+</span></span><span style=display:flex><span>  ROUND(<span style=color:#66d9ef>AVG</span>(pm2_5), <span style=color:#ae81ff>4</span>) <span style=color:#66d9ef>AS</span> pm2_5
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> measurements
+</span></span><span style=display:flex><span><span style=color:#66d9ef>GROUP</span> <span style=color:#66d9ef>BY</span> strftime(<span style=color:#e6db74>&#39;%u&#39;</span>, measured_at)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ORDER</span> <span style=color:#66d9ef>BY</span> strftime(<span style=color:#e6db74>&#39;%u&#39;</span>, measured_at);
+</span></span></code></pre></div><ul><li><code>%w</code>는 일요일을 0으로 시작하는 요일 숫자 (0~6)</li><li><code>%u</code>는 월요일을 1로 시작하는 요일 숫자 (1~7) → 우리가 원하는 요일 순서에 딱 맞아요!</li></ul><p>%w 나.. %u 이런 게&mldr; 오라클 작성할 때도 동일한가?</p><p><code>%w</code>, <code>%u</code> 같은 포맷은 <strong>SQLite나 PostgreSQL</strong> 등 일부 DB에서 사용하는 <code>strftime()</code> 함수의 포맷이에요. **오라클(Oracle)**에서는 방식이 조금 달라요.</p><h3 id=-오라클에서-요일-숫자-구하는-방법>🏛️ 오라클에서 요일 숫자 구하는 방법
+<a class=anchor href=#-%ec%98%a4%eb%9d%bc%ed%81%b4%ec%97%90%ec%84%9c-%ec%9a%94%ec%9d%bc-%ec%88%ab%ec%9e%90-%ea%b5%ac%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95>#</a></h3><p>오라클에서는 <code>TO_CHAR()</code> 함수를 사용해서 날짜의 요일을 숫자로 변환해요:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> TO_CHAR(SYSDATE, <span style=color:#e6db74>&#39;D&#39;</span>) <span style=color:#66d9ef>AS</span> <span style=color:#960050;background-color:#1e0010>요일숫자</span> <span style=color:#66d9ef>FROM</span> dual;
+</span></span></code></pre></div><ul><li><code>'D'</code>는 <strong>요일을 숫자로 반환</strong>하는 포맷이에요.</li><li>반환되는 숫자는 <strong>NLS_TERRITORY 설정</strong>에 따라 달라질 수 있어요.<ul><li>예: <code>1 = 일요일</code>, <code>2 = 월요일</code> … 이런 식으로 시작 요일이 달라질 수 있어요.</li></ul></li><li><h3 id=-요일을-한글로-바꾸고-싶다면>📌 요일을 한글로 바꾸고 싶다면?
+<a class=anchor href=#-%ec%9a%94%ec%9d%bc%ec%9d%84-%ed%95%9c%ea%b8%80%eb%a1%9c-%eb%b0%94%ea%be%b8%ea%b3%a0-%ec%8b%b6%eb%8b%a4%eb%a9%b4>#</a></h3></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> 
+</span></span><span style=display:flex><span>  TO_CHAR(SYSDATE, <span style=color:#e6db74>&#39;D&#39;</span>) <span style=color:#66d9ef>AS</span> <span style=color:#960050;background-color:#1e0010>요일숫자</span>,
+</span></span><span style=display:flex><span>  DECODE(TO_CHAR(SYSDATE, <span style=color:#e6db74>&#39;D&#39;</span>),
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;1&#39;</span>, <span style=color:#e6db74>&#39;일요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;2&#39;</span>, <span style=color:#e6db74>&#39;월요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;3&#39;</span>, <span style=color:#e6db74>&#39;화요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;4&#39;</span>, <span style=color:#e6db74>&#39;수요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;5&#39;</span>, <span style=color:#e6db74>&#39;목요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;6&#39;</span>, <span style=color:#e6db74>&#39;금요일&#39;</span>,
+</span></span><span style=display:flex><span>         <span style=color:#e6db74>&#39;7&#39;</span>, <span style=color:#e6db74>&#39;토요일&#39;</span>) <span style=color:#66d9ef>AS</span> <span style=color:#960050;background-color:#1e0010>한글요일</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> dual;
+</span></span></code></pre></div><p>이렇게 <code>DECODE()</code>를 활용하면 숫자를 한글 요일로 매핑할 수 있어요.</p><div class="flex align-center text-small book-post-date"><span>August 4, 2025</span></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><ul><li><a href=#-오라클에서-요일-숫자-구하는-방법>🏛️ 오라클에서 요일 숫자 구하는 방법</a></li><li><a href=#-요일을-한글로-바꾸고-싶다면>📌 요일을 한글로 바꾸고 싶다면?</a></li></ul></li></ul></nav></div></aside></main></body></html>
