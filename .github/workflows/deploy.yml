@@ -17,7 +17,15 @@ jobs:
       - name: 체크아웃
         uses: actions/checkout@v4
         with:
-          submodules: recursive  # 서브모듈도 함께 체크아웃
+          submodules: recursive
+          fetch-depth: 0  # 전체 히스토리 가져오기
+
+      - name: 서브모듈 강제 업데이트
+        run: |
+          git submodule update --init --recursive --force
+          cd themes/hugo-book
+          git checkout main
+          git pull origin main
 
       - name: Hugo 설치
         uses: peaceiris/actions-hugo@v2
