@@ -1,10 +1,13 @@
 {{ define "main" }}
-<div class="flex">
+{{ $isDocsPage := eq .Section "docs" }}
+<div class="flex{{ if $isDocsPage }} flex-wrap{{ end }}">
+  {{ if $isDocsPage }}
   <aside class="book-menu">
     <div class="book-menu-content">
-      {{ template "book/menu" . }}
+      {{ template "book/menu-bundle" . }}
     </div>
   </aside>
+  {{ end }}
 
   <div class="book-page">
     <header class="book-header">
@@ -12,35 +15,41 @@
     </header>
 
     <article class="markdown">
-      <h1>{{ .Title }}</h1>
+      <h1>
+        <a href="{{ .RelPermalink }}">{{ partial "docs/title" . }}</a>
+      </h1>
       
-      <!-- 태그 표시 영역 -->
+      <!-- 태그 표시 영역만 추가 -->
       {{ if .Params.tags }}
       <div class="book-tags" style="margin: 1rem 0;">
         {{ range .Params.tags }}
-        <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" 
-           style="display: inline-block; background: #f1f1f1; color: #333; padding: 0.25rem 0.5rem; margin: 0.25rem 0.25rem 0.25rem 0; border-radius: 3px; text-decoration: none; font-size: 0.875rem;">{{ . }}</a>
+        <span style="display: inline-block; background: #f8f9fa; border: 1px solid #dee2e6; color: #495057; padding: 0.25rem 0.5rem; margin: 0.25rem 0.25rem 0.25rem 0; border-radius: 0.25rem; font-size: 0.75rem;">
+          <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" style="color: inherit; text-decoration: none;">{{ . }}</a>
+        </span>
         {{ end }}
       </div>
       {{ end }}
-      
-      {{ .Content }}
-      
-      <!-- 하단 태그 표시 -->
-      {{ if .Params.tags }}
-      <footer style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee;">
-        <div>
-          <strong>Tags:</strong>
-          {{ range $index, $tag := .Params.tags }}
-            {{ if $index }}, {{ end }}
-            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}" style="color: #0066cc; text-decoration: none;">#{{ $tag }}</a>
-          {{ end }}
-        </div>
-      </footer>
+
+      {{ with .Params.description }}
+      <blockquote class="book-hint info">
+        <p>{{ . }}</p>
+      </blockquote>
       {{ end }}
+
+      {{ .Content }}
     </article>
 
-    {{ template "book/toc" . }}
+    {{ if $isDocsPage }}
+      {{ template "book/toc" . }}
+    {{ end }}
   </div>
+
+  {{ if and $isDocsPage (.Site.Params.BookComments) }}
+  <aside class="book-comments">
+    <div class="book-comments-content">
+      {{ template "book/comments" . }}
+    </div>
+  </aside>
+  {{ end }}
 </div>
 {{ end }}
