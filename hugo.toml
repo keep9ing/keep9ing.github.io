@@ -10,3 +10,9 @@ cleanDestinationDir = true  # Hugo에서 제공하는 clean 옵션(깨끗한 빌
 [params]
   BookMenuBundle = "menu"
   BookSectionPagesMenu = false  # 자동 메뉴 생성 비활성화
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1  # H1부터 TOC 시작 (1~6 설정 가능)
+    endLevel = 4    # H4까지 TOC 포함 (1~6 설정 가능)
+    ordered = false # true면 번호 매기기, false면 불릿
