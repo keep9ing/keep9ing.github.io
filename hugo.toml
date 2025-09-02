@@ -3,8 +3,9 @@ languageCode = "ko-kr"
 title = '기록하자 뭐든'
 theme = "hugo-book"
 
-buildDrafts = false  # 이게 true로 되어 있으면 draft도 빌드됨
+buildDrafts = false
 publishDir = "public"
+cleanDestinationDir = true  # Hugo에서 제공하는 clean 옵션(깨끗한 빌드 보장)
 
 [params]
   BookMenuBundle = "menu"

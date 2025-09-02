@@ -16,14 +16,16 @@ jobs:
     steps:
       - name: 체크아웃
         uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 서브모듈도 함께 체크아웃
 
       - name: Hugo 설치
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
 
-      - name: 🧹 기존 빌드 파일 정리
-        run: rm -rf public/
+      # - name: 🧹 기존 빌드 파일 정리
+        # run: rm -rf public/
 
       - name: Hugo 빌드
         run: hugo --minify --cleanDestinationDir
